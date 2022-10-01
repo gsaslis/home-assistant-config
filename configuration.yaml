@@ -1,0 +1,110 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+http:
+  server_host: 0.0.0.0
+  ip_ban_enabled: true
+  login_attempts_threshold: 5
+  use_x_forwarded_for: true
+  trusted_proxies:
+    # Pod CIDR
+    - 10.42.0.0/16
+    # Node CIDR
+    - 192.168.100.0/24
+  
+
+# Text to speech
+tts:
+  # - platform: google_translate
+
+  - platform: marytts
+    host: "https://mimic3.k3s.yorgos.net.gr/"
+    # port: 59125
+    port: 443
+    voice: en_UK/apope_low
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+homekit:
+#  - filter:
+#      include_domains:
+#        - alarm_control_panel
+#        - light
+#        - media_player
+#      include_entity_globs:
+#        - binary_sensor.*_occupancy
+#      include_entities:
+#        - binary_sensor.living_room_motion
+#    entity_config:
+#      light.kitchen_table:
+#        name: Kitchen Table Light
+#      switch.bedroom_outlet:
+#        type: outlet
+#      camera.back_porch:
+#        support_audio: True
+  - name: Home Assistant Bridge
+    port: 51827
+    filter:
+      exclude_entity_globs:
+        - automation.*
+
+mqtt:
+  broker: mosquitto.k3s.yorgos.net.gr
+  port: 31883
+
+
+sensor: !include_dir_merge_list sensors/
+
+light: !include_dir_merge_list lights/
+  
+# no longer used
+# light groups:
+#   - platform: group
+#     name: "Living Room Color"
+#     entities:
+#       - light.north_northwest_color_bulb
+#       - light.north_northeast_color_bulb
+#       - light.northwest_color_bulb
+#       - light.northeast_color_bulb
+#       - light.ne_n_color_bulb
+#       - light.nw_n_color_bulb
+#       - light.southwest_color_bulb
+#       - light.southeast_color_bulb
+#       - light.s_sw_color_bulb
+#   - platform: group
+#     name: "Living Room White"
+#     entities:
+#       - light.north_northwest_white_bulb
+#       - light.north_northeast_white_bulb
+#       - light.northwest_white_bulb
+#       - light.northeast_white_bulb
+#       - light.ne_n_white_bulb
+#       - light.nw_n_white_bulb
+#       - light.southwest_white_bulb
+#       - light.southeast_white_bulb
+#       - light.s_sw_white_bulb
+
+switch: !include_dir_merge_list switches/
+
+binary_sensor: !include_dir_merge_list binary_sensors/
+
+climate: !include_dir_merge_list climate/
+
+    
+    #media_player:
+    #  - platform: samsungtv_custom
+    #    host: !secret samsungtv_ip
+    #    port: 8002
+    #    mac: !secret samsungtv_mac
+    #source_list: '{"PlayStation": "KEY_HDMI1", "Cosmote TV": "KEY_HDMI2"}'
+
+fastdotcom:
+  scan_interval:
+        hours: 2
+
+
+camera: !include cameras.yaml

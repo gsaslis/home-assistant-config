@@ -1,0 +1,30 @@
+outside_lights:
+  name: Outside Lights
+  entities:
+    - light.skala_kipou
+    - light.diadromos_kipou
+    - light.kitchen_patio_lights
+    - light.eisodos_1a
+      # don't need both   - light.eisodos_2a
+# fwtakia    - light.mpalkoni_saloniou
+    - light.east_bedroom_balcony
+
+
+watering_north:
+  name: North Garden Watering
+  entities:
+    - switch.north_drip_line
+    - switch.east_sprinklers
+    - switch.west_sprinklers
+    - switch.24vac_converter
+#  unique_id: group.north_garden_watering
+
+watering_south:
+  name: South Garden Watering
+  entities:
+    - switch.south_garden_1
+    - switch.south_garden_2
+    - switch.south_garden_3
+    - switch.south_garden_4
+    - light.diadromos_kipou
+#  unique_id: group.south_garden_watering

@@ -1,0 +1,38 @@
+- platform: mqtt
+  name: "S20 Plug 0"
+  state_topic: "stat/sonoff_s20_0/POWER"
+  command_topic: "cmnd/sonoff_s20_0/POWER"
+
+- platform: mqtt
+  name: "Lydia Plug"
+  state_topic: "shellies/shellyplug-s-B52E5A/relay/0"
+  command_topic: "shellies/shellyplug-s-B52E5A/relay/0/command"
+#   availability_topic: "shellies/shellyplug-s-9DD406/online"
+  qos: 1
+  value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
+  payload_on: "on"
+  payload_off: "off"
+  payload_available: "true"
+  payload_not_available: "false"
+  #optimistic: false
+  retain: false
+
+- platform: mqtt
+  name: "Bedroom Plug"
+  state_topic: "shellies/shellyplug-s-B4D686/relay/0"
+  command_topic: "shellies/shellyplug-s-B4D686/relay/0/command"
+#   availability_topic: "shellies/shellyplug-s-9DD406/online"
+  qos: 1
+  value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
+  payload_on: "on"
+  payload_off: "off"
+  payload_available: "true"
+  payload_not_available: "false"
+  #optimistic: false
+  retain: false
+
+- platform: mqtt
+  name: "Mpriza Eisodou"
+  state_topic: "stat/tasmota_E2D95C/POWER2"
+  command_topic: "cmnd/tasmota_E2D95C/POWER2"
+

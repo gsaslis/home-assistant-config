@@ -1,0 +1,31 @@
+
+- platform: generic
+  name: Kitchen Window
+  still_image_url: !secret kitchen_camera_still_url
+  stream_source: !secret kitchen_camera_stream_url
+  verify_ssl: false
+- platform: generic
+  name: Parking Entrance
+  still_image_url: !secret parking_camera_still_url
+  stream_source: !secret parking_camera_stream_url
+  verify_ssl: false
+- platform: generic
+  name: North Garden
+  still_image_url: !secret north_garden_camera_still_url
+  stream_source: !secret north_garden_camera_stream_url
+  verify_ssl: false
+- platform: generic
+  name: North East Windows
+  still_image_url: !secret north_east_windows_camera_still_url
+  stream_source: !secret north_east_windows_camera_stream_url
+  verify_ssl: false
+- platform: generic
+  name: Daddys Office Entrance
+  still_image_url: !secret daddys_office_entrance_camera_still_url
+  stream_source: !secret daddys_office_entrance_camera_stream_url
+  verify_ssl: false
+- platform: generic
+  name: South Garden
+  still_image_url: !secret south_garden_camera_still_url
+  stream_source: !secret south_garden_camera_stream_url
+  verify_ssl: false

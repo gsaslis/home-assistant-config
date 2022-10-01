@@ -1,0 +1,47 @@
+- platform: generic_thermostat
+  name: Bedrooms
+  heater: switch.upstairs_heating
+  target_sensor: sensor.bedroom_temperature
+  min_temp: 13
+  max_temp: 23
+  ac_mode: false
+  target_temp: 18
+  cold_tolerance: 0.3
+  hot_tolerance: 0
+  min_cycle_duration:
+    seconds: 45
+  away_temp: 15
+  precision: 0.1
+  initial_hvac_mode: "off"
+
+- platform: generic_thermostat
+  name: Ground Floor
+  heater: switch.ground_floor_heating
+  target_sensor: sensor.kitchen_temperature
+  min_temp: 13
+  max_temp: 23
+  ac_mode: false
+  target_temp: 18
+  cold_tolerance: 0.3
+  hot_tolerance: 0
+  min_cycle_duration:
+    seconds: 45
+  away_temp: 15
+  precision: 0.1
+  initial_hvac_mode: "off"
+
+- platform: generic_thermostat
+  name: Daddy's Office
+  heater: switch.basement_heating
+  target_sensor: sensor.office_temperature
+  min_temp: 13
+  max_temp: 23
+  ac_mode: false
+  target_temp: 18
+  cold_tolerance: 0.3
+  hot_tolerance: 0
+  min_cycle_duration:
+    seconds: 45
+  away_temp: 15
+  precision: 0.1
+  initial_hvac_mode: "off"

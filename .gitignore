@@ -1,0 +1,9 @@
+.cache/
+.cloud/
+home-assistant.log
+home-assistant.log.*
+home-assistant_v2
+home-assistant_v2.*
+.local/
+**/secrets.yaml
+storage_old/

@@ -1,0 +1,123 @@
+- platform: mqtt
+  name: "Kitchen Patio Lights"
+  state_topic: "stat/tasmota_B4AB0B/POWER2"
+  command_topic: "cmnd/tasmota_B4AB0B/POWER2"
+
+- platform: mqtt
+  name: "Skala Kipou"
+  state_topic: "stat/tasmota_E29E62/POWER1"
+  command_topic: "cmnd/tasmota_E29E62/POWER1"
+- platform: mqtt
+  name: "Eisodos - 1a"
+  state_topic: "stat/tasmota_E29E62/POWER2"
+  command_topic: "cmnd/tasmota_E29E62/POWER2"
+- platform: mqtt
+  name: "Diadromos Kipou"
+  state_topic: "stat/tasmota_E29E62/POWER3"
+  command_topic: "cmnd/tasmota_E29E62/POWER3"
+
+- platform: mqtt
+  name: "Eisodos - 2a"
+  state_topic: "stat/tasmota_E2D95C/POWER1"
+  command_topic: "cmnd/tasmota_E2D95C/POWER1"
+- platform: mqtt
+  name: "Diadromos Eisodou"
+  state_topic: "stat/tasmota_E2D95C/POWER3"
+  command_topic: "cmnd/tasmota_E2D95C/POWER3"
+
+- platform: mqtt
+  name: "Voreia Avli"
+  state_topic: "stat/tasmota_E2DAC4/POWER2"
+  command_topic: "cmnd/tasmota_E2DAC4/POWER2"
+
+- platform: mqtt
+  name: "Mpalkoni Saloniou"
+  state_topic: "stat/tasmota_E295F2/POWER1"
+  command_topic: "cmnd/tasmota_E295F2/POWER1"
+
+- platform: mqtt
+  name: "Spotakia Main Saloniou"
+  state_topic: "stat/tasmota_E295F2/POWER2"
+  command_topic: "cmnd/tasmota_E295F2/POWER2"
+
+- platform: mqtt
+  name: "Office Floor"
+  state_topic: "stat/sonoffCameraLight/POWER"
+  command_topic: "cmnd/sonoffCameraLight/POWER"
+
+- platform: mqtt
+  name: "East Bedroom Balcony"
+  state_topic: "shellies/shelly1-E098068CE394/relay/0"
+  command_topic: "shellies/shelly1-E098068CE394/relay/0/command"
+#   availability_topic: "shellies/shelly1-E098068CE394/online"
+  qos: 1
+  value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
+  payload_on: "on"
+  payload_off: "off"
+  payload_available: "true"
+  payload_not_available: "false"
+  #optimistic: false
+  retain: false
+
+- platform: mqtt
+  name: "Snail Lights"
+  state_topic: "stat/sonoffS26_0/POWER"
+  command_topic: "cmnd/sonoffS26_0/POWER"
+
+- platform: mqtt
+  name: "Aquarium Lights"
+  state_topic: "shellies/shellyplug-s-F8C5C0/relay/0"
+  command_topic: "shellies/shellyplug-s-F8C5C0/relay/0/command"
+#   availability_topic: "shellies/shellyplug-s-F8C5C0/online"
+  qos: 1
+  value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
+  payload_on: "on"
+  payload_off: "off"
+  payload_available: "true"
+  payload_not_available: "false"
+  #optimistic: false
+  retain: false
+
+
+- platform: mqtt
+  name: "Car Park Lights"
+  state_topic: "shellies/shelly1pm-98CDAC1EED2D/relay/0"
+  command_topic: "shellies/shelly1pm-98CDAC1EED2D/relay/0/command"
+#   availability_topic: "shellies/shelly1pm-98CDAC1EED2D/online"
+  qos: 1
+  value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
+  payload_on: "on"
+  payload_off: "off"
+  payload_available: "true"
+  payload_not_available: "false"
+  #optimistic: false
+  retain: false
+
+- platform: mqtt
+  name: "Office Desk"
+  state_topic: "shellies/shellyplug-s-9A52C9/relay/0"
+  command_topic: "shellies/shellyplug-s-9A52C9/relay/0/command"
+#   availability_topic: "shellies/shellyplug-s-9A52C9/online"
+  qos: 1
+  value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
+  payload_on: "on"
+  payload_off: "off"
+  payload_available: "true"
+  payload_not_available: "false"
+  #optimistic: false
+  retain: false
+
+- platform: mqtt
+  name: "Fireplace"
+  state_topic: "shellies/shellyplug-s-9DD406/relay/0"
+  command_topic: "shellies/shellyplug-s-9DD406/relay/0/command"
+#   availability_topic: "shellies/shellyplug-s-9DD406/online"
+  qos: 1
+  value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
+  payload_on: "on"
+  payload_off: "off"
+  payload_available: "true"
+  payload_not_available: "false"
+  #optimistic: false
+  retain: false
+

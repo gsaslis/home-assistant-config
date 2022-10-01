@@ -1,0 +1,89 @@
+- id: '1615848861826'
+  name: Good Night
+  entities: {}
+- id: '1616095846803'
+  name: Movie Time
+  entities:
+    script.sleep_movie_scene_doors:
+      last_triggered:
+      mode: single
+      current: 0
+      friendly_name: Sleep / movie scene - Doors
+      state: 'off'
+- id: '1632544728904'
+  name: Good Morning House
+  entities:
+    script.doors_up:
+      last_triggered: '2021-09-25T03:43:46.663387+00:00'
+      mode: single
+      current: 0
+      friendly_name: Roll up door shutters
+      state: 'off'
+    script.windows_up:
+      last_triggered: '2021-09-25T03:43:50.939991+00:00'
+      mode: single
+      current: 0
+      friendly_name: Roll up windows shutters
+      state: 'off'
+- id: '1633780807469'
+  name: Film Time
+  entities:
+    script.sleep_movie_scene_doors:
+      last_triggered: '2021-10-09T11:55:33.517410+00:00'
+      mode: single
+      current: 0
+      friendly_name: Sleep / movie scene - Doors
+      state: 'off'
+    script.sleep_movie_scene_windows:
+      last_triggered: '2021-10-09T11:55:36.020293+00:00'
+      mode: single
+      current: 0
+      friendly_name: Sleep / movie scene - Windows
+      state: 'off'
+  icon: hass:window-closed
+- id: '1633780855735'
+  name: Film Time
+  entities:
+    script.sleep_movie_scene_doors:
+      last_triggered: '2021-10-09T11:55:33.517410+00:00'
+      mode: single
+      current: 0
+      friendly_name: Sleep / movie scene - Doors
+      state: 'off'
+    script.sleep_movie_scene_windows:
+      last_triggered: '2021-10-09T11:55:36.020293+00:00'
+      mode: single
+      current: 0
+      friendly_name: Sleep / movie scene - Windows
+      state: 'off'
+  icon: hass:window-closed
+- id: '1645250008219'
+  name: Good Morning
+  entities:
+    script.doors_up:
+      last_triggered: '2022-02-18T06:09:16.660007+00:00'
+      mode: single
+      current: 0
+      friendly_name: Roll up door shutters
+      state: 'off'
+    script.windows_up:
+      last_triggered: '2022-02-18T06:09:16.660654+00:00'
+      mode: single
+      current: 0
+      friendly_name: Roll up windows shutters
+      state: 'off'
+- id: '1645250046494'
+  name: Good morning
+  entities:
+    script.windows_up:
+      last_triggered: '2022-02-18T06:09:16.660654+00:00'
+      mode: single
+      current: 0
+      friendly_name: Roll up windows shutters
+      state: 'off'
+    script.doors_up:
+      last_triggered: '2022-02-18T06:09:16.660007+00:00'
+      mode: single
+      current: 0
+      friendly_name: Roll up door shutters
+      state: 'off'

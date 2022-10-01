@@ -1,0 +1,45 @@
+##################################### WATERING #################################
+
+
+- platform: mqtt
+  name: "North Drip Line"
+  state_topic: "stat/tasmota_north_garden/POWER1"
+  command_topic: "cmnd/tasmota_north_garden/POWER1"
+
+- platform: mqtt
+  name: "East Sprinklers"
+  state_topic: "stat/tasmota_north_garden/POWER2"
+  command_topic: "cmnd/tasmota_north_garden/POWER2"
+
+- platform: mqtt
+  name: "West Sprinklers"
+  state_topic: "stat/tasmota_north_garden/POWER3"
+  command_topic: "cmnd/tasmota_north_garden/POWER3"
+
+- platform: mqtt
+  name: "24VAC Converter"
+  state_topic: "stat/tasmota_north_garden/POWER4"
+  command_topic: "cmnd/tasmota_north_garden/POWER4"
+
+
+- platform: mqtt
+  name: "South Garden 1"
+  state_topic: "stat/tasmota_south_garden/POWER1"
+  command_topic: "cmnd/tasmota_south_garden/POWER1"
+
+- platform: mqtt
+  name: "South Garden 2"
+  state_topic: "stat/tasmota_south_garden/POWER2"
+  command_topic: "cmnd/tasmota_south_garden/POWER2"
+
+- platform: mqtt
+  name: "South Garden 3"
+  state_topic: "stat/tasmota_south_garden/POWER3"
+  command_topic: "cmnd/tasmota_south_garden/POWER3"
+
+
+- platform: mqtt
+  name: "South Garden 4"
+  state_topic: "stat/tasmota_south_garden/POWER4"
+  command_topic: "cmnd/tasmota_south_garden/POWER4"
+

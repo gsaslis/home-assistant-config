@@ -1,0 +1,845 @@
+# ################################# NORTH - NORTHWEST ###################################
+
+# uninstalled shelly duo after all (for other reasons), but this was a working config. 
+
+# - platform: mqtt
+#   name: "North-NorthWest Color Bulb"
+#   schema: template
+#   effect_list:
+#     - "Off"
+#     - Meteor Shower
+#     - Gradual Change
+#     - Flash
+#   state_topic: "shellies/livingroom-north-northwest/color/0/status"
+#   command_topic: "shellies/livingroom-north-northwest/color/0/set"
+#   command_on_template: >
+#     {
+#       "turn": "on",
+#       "mode": "color",
+#       {%- if red is defined and green is defined and blue is defined -%}
+#         "red": {{ red }},
+#         "green": {{ green }},
+#         "blue": {{ blue }},
+#       {%- endif -%}
+#       {%- if brightness is defined -%}
+#         "gain": {{ (brightness/255*100)|int }},
+#       {%- endif -%}
+#       {%- if effect is defined -%}
+#         {%- if effect == 'Meteor Shower' -%}
+#           "effect": 1
+#         {%- elif effect == 'Gradual Change' -%}
+#           "effect": 2
+#         {%- elif effect == 'Flash' -%}
+#           "effect": 3
+#         {%- else -%}
+#           "effect": 0
+#         {%- endif -%}
+#       {%- else -%}
+#         "effect": 0
+#       {%- endif -%}
+#     }
+#   command_off_template: >
+#     {
+#       "turn": "off",
+#       "mode": "color",
+#       "effect": 0
+#     }
+#   qos: 1
+#   state_template: '{% if value_json.ison == true and value_json.mode == "color" %}on{% else %}off{% endif %}'
+#   brightness_template: '{{ (value_json.gain/100*255)|int }}'
+#   red_template: '{{ value_json.red }}'
+#   green_template: '{{ value_json.green }}'
+#   blue_template: '{{ value_json.blue }}'
+#   white_value_template: '{{ value_json.white }}'
+#   effect_template: >
+#     {%- if value_json.effect == 1 -%}
+#       Meteor Shower
+#     {%- elif value_json.effect == 2 -%}
+#       Gradual Change
+#     {%- elif value_json.effect == 3 -%}
+#       Flash
+#     {%- else -%}
+#       Off
+#     {%- endif -%}
+#   retain: false
+
+# - platform: mqtt
+#   name: "North-NorthWest White Bulb"
+#   schema: template
+#   state_topic: "shellies/livingroom-north-northwest/color/0/status"
+#   command_topic: "shellies/livingroom-north-northwest/color/0/set"
+#   command_on_template: >
+#     {
+#       "turn": "on",
+#       "mode": "white",
+#       {%- if color_temp is defined -%}
+#         "temp": {{ (1000000/(((float(color_temp)-153)/354*180)+153)-35) | int }},
+#       {%- endif -%}
+#       {%- if brightness is defined -%}
+#         "brightness": {{ (brightness/255*100) | int }},
+#       {%- endif -%}
+#       "effect": 0
+#     }
+#   command_off_template: >
+#     {
+#       "turn": "off",
+#       "mode": "white",
+#       "effect": 0
+#     }
+#   qos: 1
+#   state_template: '{% if value_json.ison == true and value_json.mode == "white" %}on{% else %}off{% endif %}'
+#   brightness_template: '{{ (value_json.brightness/100*255) | int }}'
+#   color_temp_template: "{{ (1000000/(((float(value_json.temp)-3000)/3500*4500)+2000)) | int }}"
+#   retain: false
+
+
+# ################################# NORTH - NORTHEAST ###################################
+
+# - platform: mqtt
+#   name: "North-NorthEast Color Bulb"
+#   schema: template
+#   effect_list:
+#     - "Off"
+#     - Meteor Shower
+#     - Gradual Change
+#     - Flash
+#   state_topic: "shellies/livingroom-north-northeast/color/0/status"
+#   command_topic: "shellies/livingroom-north-northeast/color/0/set"
+#   command_on_template: >
+#     {
+#       "turn": "on",
+#       "mode": "color",
+#       {%- if red is defined and green is defined and blue is defined -%}
+#         "red": {{ red }},
+#         "green": {{ green }},
+#         "blue": {{ blue }},
+#       {%- endif -%}
+#       {%- if brightness is defined -%}
+#         "gain": {{ (brightness/255*100)|int }},
+#       {%- endif -%}
+#       {%- if effect is defined -%}
+#         {%- if effect == 'Meteor Shower' -%}
+#           "effect": 1
+#         {%- elif effect == 'Gradual Change' -%}
+#           "effect": 2
+#         {%- elif effect == 'Flash' -%}
+#           "effect": 3
+#         {%- else -%}
+#           "effect": 0
+#         {%- endif -%}
+#       {%- else -%}
+#         "effect": 0
+#       {%- endif -%}
+#     }
+#   command_off_template: >
+#     {
+#       "turn": "off",
+#       "mode": "color",
+#       "effect": 0
+#     }
+#   qos: 1
+#   state_template: '{% if value_json.ison == true and value_json.mode == "color" %}on{% else %}off{% endif %}'
+#   brightness_template: '{{ (value_json.gain/100*255)|int }}'
+#   red_template: '{{ value_json.red }}'
+#   green_template: '{{ value_json.green }}'
+#   blue_template: '{{ value_json.blue }}'
+#   white_value_template: '{{ value_json.white }}'
+#   effect_template: >
+#     {%- if value_json.effect == 1 -%}
+#       Meteor Shower
+#     {%- elif value_json.effect == 2 -%}
+#       Gradual Change
+#     {%- elif value_json.effect == 3 -%}
+#       Flash
+#     {%- else -%}
+#       Off
+#     {%- endif -%}
+#   retain: false
+
+# - platform: mqtt
+#   name: "North-NorthEast White Bulb"
+#   schema: template
+#   state_topic: "shellies/livingroom-north-northeast/color/0/status"
+#   command_topic: "shellies/livingroom-north-northeast/color/0/set"
+#   command_on_template: >
+#     {
+#       "turn": "on",
+#       "mode": "white",
+#       {%- if color_temp is defined -%}
+#         "temp": {{ (1000000/(((float(color_temp)-153)/354*180)+153)-35) | int }},
+#       {%- endif -%}
+#       {%- if brightness is defined -%}
+#         "brightness": {{ (brightness/255*100) | int }},
+#       {%- endif -%}
+#       "effect": 0
+#     }
+#   command_off_template: >
+#     {
+#       "turn": "off",
+#       "mode": "white",
+#       "effect": 0
+#     }
+#   qos: 1
+#   state_template: '{% if value_json.ison == true and value_json.mode == "white" %}on{% else %}off{% endif %}'
+#   brightness_template: '{{ (value_json.brightness/100*255) | int }}'
+#   color_temp_template: "{{ (1000000/(((float(value_json.temp)-3000)/3500*4500)+2000)) | int }}"
+#   retain: false
+
+
+
+# ################################# NORTH EAST - NORTH ###################################
+
+# - platform: mqtt
+#   name: "NE-N Color Bulb"
+#   schema: template
+#   effect_list:
+#     - "Off"
+#     - Meteor Shower
+#     - Gradual Change
+#     - Flash
+#   state_topic: "shellies/livingroom-northeast-north/color/0/status"
+#   command_topic: "shellies/livingroom-northeast-north/color/0/set"
+#   command_on_template: >
+#     {
+#       "turn": "on",
+#       "mode": "color",
+#       {%- if red is defined and green is defined and blue is defined -%}
+#         "red": {{ red }},
+#         "green": {{ green }},
+#         "blue": {{ blue }},
+#       {%- endif -%}
+#       {%- if brightness is defined -%}
+#         "gain": {{ (brightness/255*100)|int }},
+#       {%- endif -%}
+#       {%- if effect is defined -%}
+#         {%- if effect == 'Meteor Shower' -%}
+#           "effect": 1
+#         {%- elif effect == 'Gradual Change' -%}
+#           "effect": 2
+#         {%- elif effect == 'Flash' -%}
+#           "effect": 3
+#         {%- else -%}
+#           "effect": 0
+#         {%- endif -%}
+#       {%- else -%}
+#         "effect": 0
+#       {%- endif -%}
+#     }
+#   command_off_template: >
+#     {
+#       "turn": "off",
+#       "mode": "color",
+#       "effect": 0
+#     }
+#   qos: 1
+#   state_template: '{% if value_json.ison == true and value_json.mode == "color" %}on{% else %}off{% endif %}'
+#   brightness_template: '{{ (value_json.gain/100*255)|int }}'
+#   red_template: '{{ value_json.red }}'
+#   green_template: '{{ value_json.green }}'
+#   blue_template: '{{ value_json.blue }}'
+#   white_value_template: '{{ value_json.white }}'
+#   effect_template: >
+#     {%- if value_json.effect == 1 -%}
+#       Meteor Shower
+#     {%- elif value_json.effect == 2 -%}
+#       Gradual Change
+#     {%- elif value_json.effect == 3 -%}
+#       Flash
+#     {%- else -%}
+#       Off
+#     {%- endif -%}
+#   retain: false
+
+# - platform: mqtt
+#   name: "NE-N White Bulb"
+#   schema: template
+#   state_topic: "shellies/livingroom-northeast-north/color/0/status"
+#   command_topic: "shellies/livingroom-northeast-north/color/0/set"
+#   command_on_template: >
+#     {
+#       "turn": "on",
+#       "mode": "white",
+#       {%- if color_temp is defined -%}
+#         "temp": {{ (1000000/(((float(color_temp)-153)/354*180)+153)-35) | int }},
+#       {%- endif -%}
+#       {%- if brightness is defined -%}
+#         "brightness": {{ (brightness/255*100) | int }},
+#       {%- endif -%}
+#       "effect": 0
+#     }
+#   command_off_template: >
+#     {
+#       "turn": "off",
+#       "mode": "white",
+#       "effect": 0
+#     }
+#   qos: 1
+#   state_template: '{% if value_json.ison == true and value_json.mode == "white" %}on{% else %}off{% endif %}'
+#   brightness_template: '{{ (value_json.brightness/100*255) | int }}'
+#   color_temp_template: "{{ (1000000/(((float(value_json.temp)-3000)/3500*4500)+2000)) | int }}"
+#   retain: false
+
+
+
+# ################################# NORTH WEST ###################################
+# - platform: mqtt
+#   name: "NorthWest Color Bulb"
+#   schema: template
+#   effect_list:
+#     - "Off"
+#     - Meteor Shower
+#     - Gradual Change
+#     - Flash
+#   state_topic: "shellies/livingroom-northwest/color/0/status"
+#   command_topic: "shellies/livingroom-northwest/color/0/set"
+#   command_on_template: >
+#     {
+#       "turn": "on",
+#       "mode": "color",
+#       {%- if red is defined and green is defined and blue is defined -%}
+#         "red": {{ red }},
+#         "green": {{ green }},
+#         "blue": {{ blue }},
+#       {%- endif -%}
+#       {%- if brightness is defined -%}
+#         "gain": {{ (brightness/255*100)|int }},
+#       {%- endif -%}
+#       {%- if effect is defined -%}
+#         {%- if effect == 'Meteor Shower' -%}
+#           "effect": 1
+#         {%- elif effect == 'Gradual Change' -%}
+#           "effect": 2
+#         {%- elif effect == 'Flash' -%}
+#           "effect": 3
+#         {%- else -%}
+#           "effect": 0
+#         {%- endif -%}
+#       {%- else -%}
+#         "effect": 0
+#       {%- endif -%}
+#     }
+#   command_off_template: >
+#     {
+#       "turn": "off",
+#       "mode": "color",
+#       "effect": 0
+#     }
+#   qos: 1
+#   state_template: '{% if value_json.ison == true and value_json.mode == "color" %}on{% else %}off{% endif %}'
+#   brightness_template: '{{ (value_json.gain/100*255)|int }}'
+#   red_template: '{{ value_json.red }}'
+#   green_template: '{{ value_json.green }}'
+#   blue_template: '{{ value_json.blue }}'
+#   white_value_template: '{{ value_json.white }}'
+#   effect_template: >
+#     {%- if value_json.effect == 1 -%}
+#       Meteor Shower
+#     {%- elif value_json.effect == 2 -%}
+#       Gradual Change
+#     {%- elif value_json.effect == 3 -%}
+#       Flash
+#     {%- else -%}
+#       Off
+#     {%- endif -%}
+#   retain: false
+
+# - platform: mqtt
+#   name: "NorthWest White Bulb"
+#   schema: template
+#   state_topic: "shellies/livingroom-northwest/color/0/status"
+#   command_topic: "shellies/livingroom-northwest/color/0/set"
+#   command_on_template: >
+#     {
+#       "turn": "on",
+#       "mode": "white",
+#       {%- if color_temp is defined -%}
+#         "temp": {{ (1000000/(((float(color_temp)-153)/354*180)+153)-35) | int }},
+#       {%- endif -%}
+#       {%- if brightness is defined -%}
+#         "brightness": {{ (brightness/255*100) | int }},
+#       {%- endif -%}
+#       "effect": 0
+#     }
+#   command_off_template: >
+#     {
+#       "turn": "off",
+#       "mode": "white",
+#       "effect": 0
+#     }
+#   qos: 1
+#   state_template: '{% if value_json.ison == true and value_json.mode == "white" %}on{% else %}off{% endif %}'
+#   brightness_template: '{{ (value_json.brightness/100*255) | int }}'
+#   color_temp_template: "{{ (1000000/(((float(value_json.temp)-3000)/3500*4500)+2000)) | int }}"
+#   retain: false
+
+
+
+# ################################# NORTH EAST ###################################
+
+# - platform: mqtt
+#   name: "NorthEast Color Bulb"
+#   schema: template
+#   effect_list:
+#     - "Off"
+#     - Meteor Shower
+#     - Gradual Change
+#     - Flash
+#   state_topic: "shellies/livingroom-northeast/color/0/status"
+#   command_topic: "shellies/livingroom-northeast/color/0/set"
+#   command_on_template: >
+#     {
+#       "turn": "on",
+#       "mode": "color",
+#       {%- if red is defined and green is defined and blue is defined -%}
+#         "red": {{ red }},
+#         "green": {{ green }},
+#         "blue": {{ blue }},
+#       {%- endif -%}
+#       {%- if brightness is defined -%}
+#         "gain": {{ (brightness/255*100)|int }},
+#       {%- endif -%}
+#       {%- if effect is defined -%}
+#         {%- if effect == 'Meteor Shower' -%}
+#           "effect": 1
+#         {%- elif effect == 'Gradual Change' -%}
+#           "effect": 2
+#         {%- elif effect == 'Flash' -%}
+#           "effect": 3
+#         {%- else -%}
+#           "effect": 0
+#         {%- endif -%}
+#       {%- else -%}
+#         "effect": 0
+#       {%- endif -%}
+#     }
+#   command_off_template: >
+#     {
+#       "turn": "off",
+#       "mode": "color",
+#       "effect": 0
+#     }
+#   qos: 1
+#   state_template: '{% if value_json.ison == true and value_json.mode == "color" %}on{% else %}off{% endif %}'
+#   brightness_template: '{{ (value_json.gain/100*255)|int }}'
+#   red_template: '{{ value_json.red }}'
+#   green_template: '{{ value_json.green }}'
+#   blue_template: '{{ value_json.blue }}'
+#   white_value_template: '{{ value_json.white }}'
+#   effect_template: >
+#     {%- if value_json.effect == 1 -%}
+#       Meteor Shower
+#     {%- elif value_json.effect == 2 -%}
+#       Gradual Change
+#     {%- elif value_json.effect == 3 -%}
+#       Flash
+#     {%- else -%}
+#       Off
+#     {%- endif -%}
+#   retain: false
+
+# - platform: mqtt
+#   name: "NorthEast White Bulb"
+#   schema: template
+#   state_topic: "shellies/livingroom-northeast/color/0/status"
+#   command_topic: "shellies/livingroom-northeast/color/0/set"
+#   command_on_template: >
+#     {
+#       "turn": "on",
+#       "mode": "white",
+#       {%- if color_temp is defined -%}
+#         "temp": {{ (1000000/(((float(color_temp)-153)/354*180)+153)-35) | int }},
+#       {%- endif -%}
+#       {%- if brightness is defined -%}
+#         "brightness": {{ (brightness/255*100) | int }},
+#       {%- endif -%}
+#       "effect": 0
+#     }
+#   command_off_template: >
+#     {
+#       "turn": "off",
+#       "mode": "white",
+#       "effect": 0
+#     }
+#   qos: 1
+#   state_template: '{% if value_json.ison == true and value_json.mode == "white" %}on{% else %}off{% endif %}'
+#   brightness_template: '{{ (value_json.brightness/100*255) | int }}'
+#   color_temp_template: "{{ (1000000/(((float(value_json.temp)-3000)/3500*4500)+2000)) | int }}"
+#   retain: false
+
+
+
+
+# ################################# NORTH WEST - NORTH  ###################################
+
+# - platform: mqtt
+#   name: "NW-N Color Bulb"
+#   schema: template
+#   effect_list:
+#     - "Off"
+#     - Meteor Shower
+#     - Gradual Change
+#     - Flash
+#   state_topic: "shellies/livingroom-northwest-north/color/0/status"
+#   command_topic: "shellies/livingroom-northwest-north/color/0/set"
+#   command_on_template: >
+#     {
+#       "turn": "on",
+#       "mode": "color",
+#       {%- if red is defined and green is defined and blue is defined -%}
+#         "red": {{ red }},
+#         "green": {{ green }},
+#         "blue": {{ blue }},
+#       {%- endif -%}
+#       {%- if brightness is defined -%}
+#         "gain": {{ (brightness/255*100)|int }},
+#       {%- endif -%}
+#       {%- if effect is defined -%}
+#         {%- if effect == 'Meteor Shower' -%}
+#           "effect": 1
+#         {%- elif effect == 'Gradual Change' -%}
+#           "effect": 2
+#         {%- elif effect == 'Flash' -%}
+#           "effect": 3
+#         {%- else -%}
+#           "effect": 0
+#         {%- endif -%}
+#       {%- else -%}
+#         "effect": 0
+#       {%- endif -%}
+#     }
+#   command_off_template: >
+#     {
+#       "turn": "off",
+#       "mode": "color",
+#       "effect": 0
+#     }
+#   qos: 1
+#   state_template: '{% if value_json.ison == true and value_json.mode == "color" %}on{% else %}off{% endif %}'
+#   brightness_template: '{{ (value_json.gain/100*255)|int }}'
+#   red_template: '{{ value_json.red }}'
+#   green_template: '{{ value_json.green }}'
+#   blue_template: '{{ value_json.blue }}'
+#   white_value_template: '{{ value_json.white }}'
+#   effect_template: >
+#     {%- if value_json.effect == 1 -%}
+#       Meteor Shower
+#     {%- elif value_json.effect == 2 -%}
+#       Gradual Change
+#     {%- elif value_json.effect == 3 -%}
+#       Flash
+#     {%- else -%}
+#       Off
+#     {%- endif -%}
+#   retain: false
+
+# - platform: mqtt
+#   name: "NW-N White Bulb"
+#   schema: template
+#   state_topic: "shellies/livingroom-northwest-north/color/0/status"
+#   command_topic: "shellies/livingroom-northwest-north/color/0/set"
+#   command_on_template: >
+#     {
+#       "turn": "on",
+#       "mode": "white",
+#       {%- if color_temp is defined -%}
+#         "temp": {{ (1000000/(((float(color_temp)-153)/354*180)+153)-35) | int }},
+#       {%- endif -%}
+#       {%- if brightness is defined -%}
+#         "brightness": {{ (brightness/255*100) | int }},
+#       {%- endif -%}
+#       "effect": 0
+#     }
+#   command_off_template: >
+#     {
+#       "turn": "off",
+#       "mode": "white",
+#       "effect": 0
+#     }
+#   qos: 1
+#   state_template: '{% if value_json.ison == true and value_json.mode == "white" %}on{% else %}off{% endif %}'
+#   brightness_template: '{{ (value_json.brightness/100*255) | int }}'
+#   color_temp_template: "{{ (1000000/(((float(value_json.temp)-3000)/3500*4500)+2000)) | int }}"
+#   retain: false
+
+
+
+
+# ################################# SOUTH EAST ###################################
+
+# - platform: mqtt
+#   name: "SouthEast Color Bulb"
+#   schema: template
+#   effect_list:
+#     - "Off"
+#     - Meteor Shower
+#     - Gradual Change
+#     - Flash
+#   state_topic: "shellies/livingroom-southeast/color/0/status"
+#   command_topic: "shellies/livingroom-southeast/color/0/set"
+#   command_on_template: >
+#     {
+#       "turn": "on",
+#       "mode": "color",
+#       {%- if red is defined and green is defined and blue is defined -%}
+#         "red": {{ red }},
+#         "green": {{ green }},
+#         "blue": {{ blue }},
+#       {%- endif -%}
+#       {%- if brightness is defined -%}
+#         "gain": {{ (brightness/255*100)|int }},
+#       {%- endif -%}
+#       {%- if effect is defined -%}
+#         {%- if effect == 'Meteor Shower' -%}
+#           "effect": 1
+#         {%- elif effect == 'Gradual Change' -%}
+#           "effect": 2
+#         {%- elif effect == 'Flash' -%}
+#           "effect": 3
+#         {%- else -%}
+#           "effect": 0
+#         {%- endif -%}
+#       {%- else -%}
+#         "effect": 0
+#       {%- endif -%}
+#     }
+#   command_off_template: >
+#     {
+#       "turn": "off",
+#       "mode": "color",
+#       "effect": 0
+#     }
+#   qos: 1
+#   state_template: '{% if value_json.ison == true and value_json.mode == "color" %}on{% else %}off{% endif %}'
+#   brightness_template: '{{ (value_json.gain/100*255)|int }}'
+#   red_template: '{{ value_json.red }}'
+#   green_template: '{{ value_json.green }}'
+#   blue_template: '{{ value_json.blue }}'
+#   white_value_template: '{{ value_json.white }}'
+#   effect_template: >
+#     {%- if value_json.effect == 1 -%}
+#       Meteor Shower
+#     {%- elif value_json.effect == 2 -%}
+#       Gradual Change
+#     {%- elif value_json.effect == 3 -%}
+#       Flash
+#     {%- else -%}
+#       Off
+#     {%- endif -%}
+#   retain: false
+
+# - platform: mqtt
+#   name: "SouthEast White Bulb"
+#   schema: template
+#   state_topic: "shellies/livingroom-southeast/color/0/status"
+#   command_topic: "shellies/livingroom-southeast/color/0/set"
+#   command_on_template: >
+#     {
+#       "turn": "on",
+#       "mode": "white",
+#       {%- if color_temp is defined -%}
+#         "temp": {{ (1000000/(((float(color_temp)-153)/354*180)+153)-35) | int }},
+#       {%- endif -%}
+#       {%- if brightness is defined -%}
+#         "brightness": {{ (brightness/255*100) | int }},
+#       {%- endif -%}
+#       "effect": 0
+#     }
+#   command_off_template: >
+#     {
+#       "turn": "off",
+#       "mode": "white",
+#       "effect": 0
+#     }
+#   qos: 1
+#   state_template: '{% if value_json.ison == true and value_json.mode == "white" %}on{% else %}off{% endif %}'
+#   brightness_template: '{{ (value_json.brightness/100*255) | int }}'
+#   color_temp_template: "{{ (1000000/(((float(value_json.temp)-3000)/3500*4500)+2000)) | int }}"
+#   retain: false
+
+
+# ################################# SOUTH WEST ###################################
+
+# - platform: mqtt
+#   name: "SouthWest Color Bulb"
+#   schema: template
+#   effect_list:
+#     - "Off"
+#     - Meteor Shower
+#     - Gradual Change
+#     - Flash
+#   state_topic: "shellies/livingroom-southwest/color/0/status"
+#   command_topic: "shellies/livingroom-southwest/color/0/set"
+#   command_on_template: >
+#     {
+#       "turn": "on",
+#       "mode": "color",
+#       {%- if red is defined and green is defined and blue is defined -%}
+#         "red": {{ red }},
+#         "green": {{ green }},
+#         "blue": {{ blue }},
+#       {%- endif -%}
+#       {%- if brightness is defined -%}
+#         "gain": {{ (brightness/255*100)|int }},
+#       {%- endif -%}
+#       {%- if effect is defined -%}
+#         {%- if effect == 'Meteor Shower' -%}
+#           "effect": 1
+#         {%- elif effect == 'Gradual Change' -%}
+#           "effect": 2
+#         {%- elif effect == 'Flash' -%}
+#           "effect": 3
+#         {%- else -%}
+#           "effect": 0
+#         {%- endif -%}
+#       {%- else -%}
+#         "effect": 0
+#       {%- endif -%}
+#     }
+#   command_off_template: >
+#     {
+#       "turn": "off",
+#       "mode": "color",
+#       "effect": 0
+#     }
+#   qos: 1
+#   state_template: '{% if value_json.ison == true and value_json.mode == "color" %}on{% else %}off{% endif %}'
+#   brightness_template: '{{ (value_json.gain/100*255)|int }}'
+#   red_template: '{{ value_json.red }}'
+#   green_template: '{{ value_json.green }}'
+#   blue_template: '{{ value_json.blue }}'
+#   white_value_template: '{{ value_json.white }}'
+#   effect_template: >
+#     {%- if value_json.effect == 1 -%}
+#       Meteor Shower
+#     {%- elif value_json.effect == 2 -%}
+#       Gradual Change
+#     {%- elif value_json.effect == 3 -%}
+#       Flash
+#     {%- else -%}
+#       Off
+#     {%- endif -%}
+#   retain: false
+
+# - platform: mqtt
+#   name: "SouthWest White Bulb"
+#   schema: template
+#   state_topic: "shellies/livingroom-southwest/color/0/status"
+#   command_topic: "shellies/livingroom-southwest/color/0/set"
+#   command_on_template: >
+#     {
+#       "turn": "on",
+#       "mode": "white",
+#       {%- if color_temp is defined -%}
+#         "temp": {{ (1000000/(((float(color_temp)-153)/354*180)+153)-35) | int }},
+#       {%- endif -%}
+#       {%- if brightness is defined -%}
+#         "brightness": {{ (brightness/255*100) | int }},
+#       {%- endif -%}
+#       "effect": 0
+#     }
+#   command_off_template: >
+#     {
+#       "turn": "off",
+#       "mode": "white",
+#       "effect": 0
+#     }
+#   qos: 1
+#   state_template: '{% if value_json.ison == true and value_json.mode == "white" %}on{% else %}off{% endif %}'
+#   brightness_template: '{{ (value_json.brightness/100*255) | int }}'
+#   color_temp_template: "{{ (1000000/(((float(value_json.temp)-3000)/3500*4500)+2000)) | int }}"
+#   retain: false
+
+
+# ################################# SOUTH-SOUTH WEST ###################################
+
+# - platform: mqtt
+#   name: "S-SW Color Bulb"
+#   schema: template
+#   effect_list:
+#     - "Off"
+#     - Meteor Shower
+#     - Gradual Change
+#     - Flash
+#   state_topic: "shellies/livingroom-south-southwest/color/0/status"
+#   command_topic: "shellies/livingroom-south-southwest/color/0/set"
+#   command_on_template: >
+#     {
+#       "turn": "on",
+#       "mode": "color",
+#       {%- if red is defined and green is defined and blue is defined -%}
+#         "red": {{ red }},
+#         "green": {{ green }},
+#         "blue": {{ blue }},
+#       {%- endif -%}
+#       {%- if brightness is defined -%}
+#         "gain": {{ (brightness/255*100)|int }},
+#       {%- endif -%}
+#       {%- if effect is defined -%}
+#         {%- if effect == 'Meteor Shower' -%}
+#           "effect": 1
+#         {%- elif effect == 'Gradual Change' -%}
+#           "effect": 2
+#         {%- elif effect == 'Flash' -%}
+#           "effect": 3
+#         {%- else -%}
+#           "effect": 0
+#         {%- endif -%}
+#       {%- else -%}
+#         "effect": 0
+#       {%- endif -%}
+#     }
+#   command_off_template: >
+#     {
+#       "turn": "off",
+#       "mode": "color",
+#       "effect": 0
+#     }
+#   qos: 1
+#   state_template: '{% if value_json.ison == true and value_json.mode == "color" %}on{% else %}off{% endif %}'
+#   brightness_template: '{{ (value_json.gain/100*255)|int }}'
+#   red_template: '{{ value_json.red }}'
+#   green_template: '{{ value_json.green }}'
+#   blue_template: '{{ value_json.blue }}'
+#   white_value_template: '{{ value_json.white }}'
+#   effect_template: >
+#     {%- if value_json.effect == 1 -%}
+#       Meteor Shower
+#     {%- elif value_json.effect == 2 -%}
+#       Gradual Change
+#     {%- elif value_json.effect == 3 -%}
+#       Flash
+#     {%- else -%}
+#       Off
+#     {%- endif -%}
+#   retain: false
+
+# - platform: mqtt
+#   name: "S-SW White Bulb"
+#   schema: template
+#   state_topic: "shellies/livingroom-south-southwest/color/0/status"
+#   command_topic: "shellies/livingroom-south-southwest/color/0/set"
+#   command_on_template: >
+#     {
+#       "turn": "on",
+#       "mode": "white",
+#       {%- if color_temp is defined -%}
+#         "temp": {{ (1000000/(((float(color_temp)-153)/354*180)+153)-35) | int }},
+#       {%- endif -%}
+#       {%- if brightness is defined -%}
+#         "brightness": {{ (brightness/255*100) | int }},
+#       {%- endif -%}
+#       "effect": 0
+#     }
+#   command_off_template: >
+#     {
+#       "turn": "off",
+#       "mode": "white",
+#       "effect": 0
+#     }
+#   qos: 1
+#   state_template: '{% if value_json.ison == true and value_json.mode == "white" %}on{% else %}off{% endif %}'
+#   brightness_template: '{{ (value_json.brightness/100*255) | int }}'
+#   color_temp_template: "{{ (1000000/(((float(value_json.temp)-3000)/3500*4500)+2000)) | int }}"
+#   retain: false
+
+
