@@ -1,52 +1,65 @@
 - platform: mqtt
   name: "Kitchen Patio Lights"
+  unique_id: kitchen_patio_lights
   state_topic: "stat/tasmota_B4AB0B/POWER2"
   command_topic: "cmnd/tasmota_B4AB0B/POWER2"
 
 - platform: mqtt
-  name: "Skala Kipou"
+  name: "Garden Steps"
+  unique_id: garden_steps
   state_topic: "stat/tasmota_E29E62/POWER1"
   command_topic: "cmnd/tasmota_E29E62/POWER1"
+
 - platform: mqtt
-  name: "Eisodos - 1a"
+  name: "Main Entrance - 1"
+  unique_id: main_entrance_1
   state_topic: "stat/tasmota_E29E62/POWER2"
   command_topic: "cmnd/tasmota_E29E62/POWER2"
+
 - platform: mqtt
-  name: "Diadromos Kipou"
+  name: "Garden Path"
+  unique_id: garden_path
   state_topic: "stat/tasmota_E29E62/POWER3"
   command_topic: "cmnd/tasmota_E29E62/POWER3"
 
 - platform: mqtt
-  name: "Eisodos - 2a"
+  name: "Main Entrance - 2"
   state_topic: "stat/tasmota_E2D95C/POWER1"
   command_topic: "cmnd/tasmota_E2D95C/POWER1"
+
 - platform: mqtt
-  name: "Diadromos Eisodou"
+  name: "Entrance Hallway"
+  unique_id: entrance_hallway
   state_topic: "stat/tasmota_E2D95C/POWER3"
   command_topic: "cmnd/tasmota_E2D95C/POWER3"
 
 - platform: mqtt
-  name: "Voreia Avli"
+  name: "North Garden"
+  unique_id: north_garden
   state_topic: "stat/tasmota_E2DAC4/POWER2"
   command_topic: "cmnd/tasmota_E2DAC4/POWER2"
 
 - platform: mqtt
-  name: "Mpalkoni Saloniou"
+  name: "North Balcony"
+  unique_id: north_balcony
   state_topic: "stat/tasmota_E295F2/POWER1"
   command_topic: "cmnd/tasmota_E295F2/POWER1"
 
 - platform: mqtt
-  name: "Spotakia Main Saloniou"
+  name: "Living Room Spot Lights"
+  unique_id: living_room_spot_lights
   state_topic: "stat/tasmota_E295F2/POWER2"
   command_topic: "cmnd/tasmota_E295F2/POWER2"
 
 - platform: mqtt
   name: "Office Floor"
+  unique_id: office_floor
   state_topic: "stat/sonoffCameraLight/POWER"
   command_topic: "cmnd/sonoffCameraLight/POWER"
 
 - platform: mqtt
   name: "East Bedroom Balcony"
+  unique_id: east_bedroom_balcony
   state_topic: "shellies/shelly1-E098068CE394/relay/0"
   command_topic: "shellies/shelly1-E098068CE394/relay/0/command"
 #   availability_topic: "shellies/shelly1-E098068CE394/online"
@@ -61,11 +74,13 @@
 
 - platform: mqtt
   name: "Snail Lights"
+  unique_id: snail_lights
   state_topic: "stat/sonoffS26_0/POWER"
   command_topic: "cmnd/sonoffS26_0/POWER"
 
 - platform: mqtt
   name: "Aquarium Lights"
+  unique_id: aquarium_lights  
   state_topic: "shellies/shellyplug-s-F8C5C0/relay/0"
   command_topic: "shellies/shellyplug-s-F8C5C0/relay/0/command"
 #   availability_topic: "shellies/shellyplug-s-F8C5C0/online"
@@ -81,6 +96,7 @@
 
 - platform: mqtt
   name: "Car Park Lights"
+  unique_id: car_park_lights
   state_topic: "shellies/shelly1pm-98CDAC1EED2D/relay/0"
   command_topic: "shellies/shelly1pm-98CDAC1EED2D/relay/0/command"
 #   availability_topic: "shellies/shelly1pm-98CDAC1EED2D/online"
@@ -95,6 +111,7 @@
 
 - platform: mqtt
   name: "Office Desk"
+  unique_id: office_desk
   state_topic: "shellies/shellyplug-s-9A52C9/relay/0"
   command_topic: "shellies/shellyplug-s-9A52C9/relay/0/command"
 #   availability_topic: "shellies/shellyplug-s-9A52C9/online"
@@ -109,6 +126,7 @@
 
 - platform: mqtt
   name: "Fireplace"
+  unique_id: fireplace
   state_topic: "shellies/shellyplug-s-9DD406/relay/0"
   command_topic: "shellies/shellyplug-s-9DD406/relay/0/command"
 #   availability_topic: "shellies/shellyplug-s-9DD406/online"

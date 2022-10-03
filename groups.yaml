@@ -1,12 +1,12 @@
 outside_lights:
   name: Outside Lights
   entities:
-    - light.skala_kipou
-    - light.diadromos_kipou
+    - light.garden_steps
+    - light.garden_path
     - light.kitchen_patio_lights
-    - light.eisodos_1a
-      # don't need both   - light.eisodos_2a
-# fwtakia    - light.mpalkoni_saloniou
+    - light.main_entrance_1
+      # don't need both   - light.main_entrance_2
+# fwtakia    - light.north_balcony
     - light.east_bedroom_balcony
   # unique_id: outdoor_lights
 
@@ -27,7 +27,7 @@ watering_south:
     - switch.south_garden_2
     - switch.south_garden_3
     - switch.south_garden_4
-    - light.diadromos_kipou
+    - light.garden_path
   # unique_id: south_garden_watering
 
 door_blinds: 

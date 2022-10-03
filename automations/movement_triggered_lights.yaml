@@ -39,7 +39,7 @@
         entity_id:
         - light.office_desk
         - light.office_floor
-        - light.voreia_avli
+        - light.north_garden
       no_motion_wait: 405
 - id: '1663831971121'
   alias: South Garden Movement
@@ -55,9 +55,9 @@
   - service: light.turn_on
     target:
       entity_id:
-      - light.eisodos_1a
-      - light.eisodos_2a
-      - light.diadromos_eisodou
+      - light.main_entrance_1
+      - light.main_entrance_2
+      - light.garden_path
   - delay:
       hours: 0
       minutes: 10
@@ -66,9 +66,9 @@
   - service: light.turn_off
     target:
       entity_id:
-      - light.eisodos_1a
-      - light.eisodos_2a
-      - light.diadromos_eisodou
+      - light.main_entrance_1
+      - light.main_entrance_2
+      - light.garden_path
   mode: single
 - id: 'car_park_mvt'
   alias: Car Park Movement
