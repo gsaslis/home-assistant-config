@@ -1,4 +1,6 @@
-######### ROLLER SHUTTERS ##############
+# ######### ROLLER SHUTTERS ##############
+
+# no longer the preferred way since moving to `cover`s
 
 - platform: mqtt
   name: "[UP] Window, Kitchen"

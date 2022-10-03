@@ -108,3 +108,5 @@ fastdotcom:
 
 
 camera: !include cameras.yaml
+
+cover: !include_dir_merge_list covers/

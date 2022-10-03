@@ -28,3 +28,29 @@ watering_south:
     - switch.south_garden_4
     - light.diadromos_kipou
 #  unique_id: group.south_garden_watering
+
+door_blinds: 
+  name: Door Blinds
+  entities:
+    - cover.kitchen_door
+    - cover.living_room_door
+
+window_blinds:
+  name: Window Blinds
+  entities:
+    - cover.patio_window
+    - cover.kitchen_window
+    - cover.living_room_north_east_window
+    - cover.living_room_north_west_window
+    - cover.living_room_north_window
+
+blinds:
+  name: All Blinds
+  entities:
+    - cover.patio_window
+    - cover.kitchen_window
+    - cover.living_room_north_east_window
+    - cover.living_room_north_west_window
+    - cover.living_room_north_window
+    - cover.kitchen_door
+    - cover.living_room_door

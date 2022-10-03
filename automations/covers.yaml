@@ -1,0 +1,202 @@
+- alias: 'Kitchen Window Controller'
+  trigger:
+    - platform: mqtt
+      topic: home/kitchenwindow/command
+  action:
+      - service: mqtt.publish
+        data_template:
+          payload: "ON"
+          topic: >
+            {% if trigger.payload == "ON" %}
+              cmnd/tasmota_B4AB0B/POWER3
+            {% else %}
+              cmnd/tasmota_BE39B9/POWER3
+            {% endif %}
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 25
+          milliseconds: 0
+      - service: mqtt.publish
+        data_template:
+          payload: "OFF"
+          topic: >
+            {% if trigger.payload == "ON" %}
+              cmnd/tasmota_B4AB0B/POWER3
+            {% else %}
+              cmnd/tasmota_BE39B9/POWER3
+            {% endif %}
+
+- alias: 'Kitchen Door Controller'
+  trigger:
+    - platform: mqtt
+      topic: home/kitchendoor/command
+  action:
+      - service: mqtt.publish
+        data_template:
+          payload: "ON"
+          topic: >
+            {% if trigger.payload == "ON" %}
+              cmnd/tasmota_B4AB0B/POWER1
+            {% else %}
+              cmnd/tasmota_BE39B9/POWER1
+            {% endif %}
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 35
+          milliseconds: 0
+      - service: mqtt.publish
+        data_template:
+          payload: "OFF"
+          topic: >
+            {% if trigger.payload == "ON" %}
+              cmnd/tasmota_B4AB0B/POWER1
+            {% else %}
+              cmnd/tasmota_BE39B9/POWER1
+            {% endif %}
+
+- alias: 'Patio Window Controller'
+  trigger:
+    - platform: mqtt
+      topic: home/patiowindow/command
+  action:
+      - service: mqtt.publish
+        data_template:
+          payload: "ON"
+          topic: >
+            {% if trigger.payload == "ON" %}
+              cmnd/tasmota_C9332C/POWER2
+            {% else %}
+              cmnd/tasmota_C9332C/POWER1
+            {% endif %}
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 25
+          milliseconds: 0
+      - service: mqtt.publish
+        data_template:
+          payload: "OFF"
+          topic: >
+            {% if trigger.payload == "ON" %}
+              cmnd/tasmota_C9332C/POWER2
+            {% else %}
+              cmnd/tasmota_C9332C/POWER1
+            {% endif %}
+
+- alias: 'Living Room - North Window Controller'
+  trigger:
+    - platform: mqtt
+      topic: home/livingroom_n_window/command
+  action:
+      - service: mqtt.publish
+        data_template:
+          payload: "ON"
+          topic: >
+            {% if trigger.payload == "ON" %}
+              cmnd/tasmota_E29C1D/POWER2
+            {% else %}
+              cmnd/tasmota_E29931/POWER2
+            {% endif %}
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 25
+          milliseconds: 0
+      - service: mqtt.publish
+        data_template:
+          payload: "OFF"
+          topic: >
+            {% if trigger.payload == "ON" %}
+              cmnd/tasmota_E29C1D/POWER2
+            {% else %}
+              cmnd/tasmota_E29931/POWER2
+            {% endif %}
+
+- alias: 'Living Room - NorthWest Window Controller'
+  trigger:
+    - platform: mqtt
+      topic: home/livingroom_nw_window/command
+  action:
+      - service: mqtt.publish
+        data_template:
+          payload: "ON"
+          topic: >
+            {% if trigger.payload == "ON" %}
+              cmnd/tasmota_E29C1D/POWER1
+            {% else %}
+              cmnd/tasmota_E29931/POWER1
+            {% endif %}
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 25
+          milliseconds: 0
+      - service: mqtt.publish
+        data_template:
+          payload: "OFF"
+          topic: >
+            {% if trigger.payload == "ON" %}
+              cmnd/tasmota_E29C1D/POWER1
+            {% else %}
+              cmnd/tasmota_E29931/POWER1
+            {% endif %}
+
+- alias: 'Living Room - NorthEast Window Controller'
+  trigger:
+    - platform: mqtt
+      topic: home/livingroom_ne_window/command
+  action:
+      - service: mqtt.publish
+        data_template:
+          payload: "ON"
+          topic: >
+            {% if trigger.payload == "ON" %}
+              cmnd/tasmota_E29C1D/POWER3
+            {% else %}
+              cmnd/tasmota_E29931/POWER3
+            {% endif %}
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 25
+          milliseconds: 0
+      - service: mqtt.publish
+        data_template:
+          payload: "OFF"
+          topic: >
+            {% if trigger.payload == "ON" %}
+              cmnd/tasmota_E29C1D/POWER3
+            {% else %}
+              cmnd/tasmota_E29931/POWER3
+            {% endif %}
+
+- alias: 'Living Room - Door Controller'
+  trigger:
+    - platform: mqtt
+      topic: home/livingroom_door/command
+  action:
+      - service: mqtt.publish
+        data_template:
+          payload: "ON"
+          topic: >
+            {% if trigger.payload == "ON" %}
+              cmnd/tasmota_E295F2/POWER3
+            {% else %}
+              cmnd/tasmota_E2DAC4/POWER3
+            {% endif %}
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 35
+          milliseconds: 0
+      - service: mqtt.publish
+        data_template:
+          payload: "OFF"
+          topic: >
+            {% if trigger.payload == "ON" %}
+              cmnd/tasmota_E295F2/POWER3
+            {% else %}
+              cmnd/tasmota_E2DAC4/POWER3
+            {% endif %}

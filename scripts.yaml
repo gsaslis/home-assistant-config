@@ -1,107 +1,69 @@
 windows_up:
   alias: Roll up windows shutters
   sequence:
-  - entity_id: switch.up_window_kitchen
-    service: switch.turn_on
-  - entity_id: switch.up_patio_window_living_room
-    service: switch.turn_on
-  - entity_id: switch.up_ne_window_saloni
-    service: switch.turn_on
-  - entity_id: switch.up_n_window_saloni
-    service: switch.turn_on
-  - entity_id: switch.up_nw_window_saloni
-    service: switch.turn_on
-  - delay: 00:00:25
-  - entity_id: switch.up_window_kitchen
-    service: switch.turn_off
-  - entity_id: switch.up_patio_window_living_room
-    service: switch.turn_off
-  - entity_id: switch.up_ne_window_saloni
-    service: switch.turn_off
-  - entity_id: switch.up_n_window_saloni
-    service: switch.turn_off
-  - entity_id: switch.up_nw_window_saloni
-    service: switch.turn_off
+  - entity_id: cover.kitchen_window
+    service: cover.open_cover
+  - entity_id: cover.patio_window
+    service: cover.open_cover
+  - entity_id: cover.living_room_north_window
+    service: cover.open_cover
+  - entity_id: cover.living_room_north_west_window
+    service: cover.open_cover
+  - entity_id: cover.living_room_north_east_window
+    service: cover.open_cover
+
 windows_down:
   alias: Roll down windows shutters
   sequence:
-  - entity_id: switch.down_window_kitchen
-    service: switch.turn_on
-  - entity_id: switch.down_patio_window_living_room
-    service: switch.turn_on
-  - entity_id: switch.down_ne_window_saloni
-    service: switch.turn_on
-  - entity_id: switch.down_n_window_saloni
-    service: switch.turn_on
-  - entity_id: switch.down_nw_window_saloni
-    service: switch.turn_on
-  - delay: 00:00:20
-  - entity_id: switch.down_window_kitchen
-    service: switch.turn_off
-  - entity_id: switch.down_patio_window_living_room
-    service: switch.turn_off
-  - entity_id: switch.down_ne_window_saloni
-    service: switch.turn_off
-  - entity_id: switch.down_n_window_saloni
-    service: switch.turn_off
-  - entity_id: switch.down_nw_window_saloni
-    service: switch.turn_off
+  - entity_id: cover.kitchen_window
+    service: cover.close_cover
+  - entity_id: cover.patio_window
+    service: cover.close_cover
+  - entity_id: cover.living_room_north_window
+    service: cover.close_cover
+  - entity_id: cover.living_room_north_west_window
+    service: cover.close_cover
+  - entity_id: cover.living_room_north_east_window
+    service: cover.close_cover
+
 doors_up:
   alias: Roll up door shutters
   sequence:
-  - entity_id: switch.up_door_saloni
-    service: switch.turn_on
-  - entity_id: switch.up_door_kitchen
-    service: switch.turn_on
-  - delay: 00:00:34
-  - entity_id: switch.up_door_kitchen
-    service: switch.turn_off
-  - entity_id: switch.up_door_saloni
-    service: switch.turn_off
+  - entity_id: cover.kitchen_door
+    service: cover.open_cover
+  - entity_id: cover.living_room_door
+    service: cover.open_cover
+
+
 doors_down:
   alias: Roll down door shutters
   sequence:
-  - entity_id: switch.down_door_saloni
-    service: switch.turn_on
-  - entity_id: switch.down_door_kitchen
-    service: switch.turn_on
-  - delay: 00:00:32
-  - entity_id: switch.down_door_kitchen
-    service: switch.turn_off
-  - entity_id: switch.down_door_saloni
-    service: switch.turn_off
+  - entity_id: cover.kitchen_door
+    service: cover.close_cover
+  - entity_id: cover.living_room_door
+    service: cover.close_cover
+
 kitchen_patio_up:
   alias: Roll up Kitchen Patio shutters
   sequence:
-  - entity_id: switch.up_window_kitchen
-    service: switch.turn_on
-  - entity_id: switch.up_patio_window_living_room
-    service: switch.turn_on
-  - entity_id: switch.up_door_kitchen
-    service: switch.turn_on
-  - delay: 00:00:35
-  - entity_id: switch.up_window_kitchen
-    service: switch.turn_off
-  - entity_id: switch.up_patio_window_living_room
-    service: switch.turn_off
-  - entity_id: switch.up_door_kitchen
-    service: switch.turn_off
+  - entity_id: cover.kitchen_door
+    service: cover.open_cover
+  - entity_id: cover.kitchen_window
+    service: cover.open_cover
+  - entity_id: cover.patio_window
+    service: cover.open_cover
+
 kitchen_patio_down:
   alias: Roll Down Kitchen Patio shutters
   sequence:
-  - entity_id: switch.down_window_kitchen
-    service: switch.turn_on
-  - entity_id: switch.down_patio_window_living_room
-    service: switch.turn_on
-  - entity_id: switch.down_door_kitchen
-    service: switch.turn_on
-  - delay: 00:00:35
-  - entity_id: switch.down_window_kitchen
-    service: switch.turn_off
-  - entity_id: switch.down_patio_window_living_room
-    service: switch.turn_off
-  - entity_id: switch.down_door_kitchen
-    service: switch.turn_off
+  - entity_id: cover.kitchen_door
+    service: cover.close_cover
+  - entity_id: cover.kitchen_window
+    service: cover.close_cover
+  - entity_id: cover.patio_window
+    service: cover.close_cover
+
+
 sleep_movie_scene_windows:
   alias: Sleep / movie scene - Windows
   sequence:
@@ -130,6 +92,7 @@ sleep_movie_scene_doors:
   - delay: 00:00:17
   - entity_id: switch.down_door_saloni
     service: switch.turn_off
+
 wake_scene_windows:
   alias: Wake up scene - Windows
   sequence:
