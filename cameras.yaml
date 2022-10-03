@@ -1,31 +1,38 @@
 
 - platform: generic
   name: Kitchen Window
+  # not supported in 2021.12.7
+  # unique_id: kitchen_patio
   still_image_url: !secret kitchen_camera_still_url
   stream_source: !secret kitchen_camera_stream_url
   verify_ssl: false
 - platform: generic
   name: Parking Entrance
+  # unique_id: parking_entrance  
   still_image_url: !secret parking_camera_still_url
   stream_source: !secret parking_camera_stream_url
   verify_ssl: false
 - platform: generic
   name: North Garden
+  # unique_id: north_garden
   still_image_url: !secret north_garden_camera_still_url
   stream_source: !secret north_garden_camera_stream_url
   verify_ssl: false
 - platform: generic
   name: North East Windows
+  # unique_id: north_east_windows
   still_image_url: !secret north_east_windows_camera_still_url
   stream_source: !secret north_east_windows_camera_stream_url
   verify_ssl: false
 - platform: generic
   name: Daddys Office Entrance
+  # unique_id: daddys_office_entrance
   still_image_url: !secret daddys_office_entrance_camera_still_url
   stream_source: !secret daddys_office_entrance_camera_stream_url
   verify_ssl: false
 - platform: generic
   name: South Garden
+  # unique_id: south_garden
   still_image_url: !secret south_garden_camera_still_url
   stream_source: !secret south_garden_camera_stream_url
   verify_ssl: false

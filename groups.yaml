@@ -8,6 +8,7 @@ outside_lights:
       # don't need both   - light.eisodos_2a
 # fwtakia    - light.mpalkoni_saloniou
     - light.east_bedroom_balcony
+  # unique_id: outdoor_lights
 
 
 watering_north:
@@ -27,13 +28,14 @@ watering_south:
     - switch.south_garden_3
     - switch.south_garden_4
     - light.diadromos_kipou
-#  unique_id: group.south_garden_watering
+  # unique_id: south_garden_watering
 
 door_blinds: 
   name: Door Blinds
   entities:
     - cover.kitchen_door
     - cover.living_room_door
+  # unique_id: door_blinds
 
 window_blinds:
   name: Window Blinds
@@ -43,6 +45,7 @@ window_blinds:
     - cover.living_room_north_east_window
     - cover.living_room_north_west_window
     - cover.living_room_north_window
+  # unique_id: window_blinds
 
 blinds:
   name: All Blinds
@@ -54,3 +57,4 @@ blinds:
     - cover.living_room_north_window
     - cover.kitchen_door
     - cover.living_room_door
+  # unique_id: all_blinds

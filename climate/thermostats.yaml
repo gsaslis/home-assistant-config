@@ -1,5 +1,6 @@
 - platform: generic_thermostat
   name: Bedrooms
+  unique_id: bedrooms_thermostat
   heater: switch.upstairs_heating
   target_sensor: sensor.bedroom_temperature
   min_temp: 13
@@ -16,6 +17,7 @@
 
 - platform: generic_thermostat
   name: Ground Floor
+  unique_id: ground_floor_thermostat
   heater: switch.ground_floor_heating
   target_sensor: sensor.kitchen_temperature
   min_temp: 13
@@ -32,6 +34,7 @@
 
 - platform: generic_thermostat
   name: Daddy's Office
+  unique_id: daddys_office_thermostat
   heater: switch.basement_heating
   target_sensor: sensor.office_temperature
   min_temp: 13

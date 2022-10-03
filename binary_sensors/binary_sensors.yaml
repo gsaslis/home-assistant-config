@@ -1,5 +1,6 @@
 - platform: mqtt
   state_topic: "shellies/shellyflood-F2B1B4/sensor/flood"
+  unique_id: flood
   name: "Flood"
   #icon: mdi:pipe-leak
   payload_on: "true"
@@ -8,6 +9,7 @@
 
 - platform: rest
   name: North Garden Movement
+  # unique_id: north_garden_movement  
   resource: !secret north_garden_movement_url
   # all reolink NVR URLs below looks like this: http://${NVR_IP}/cgi-bin/api.cgi?cmd=GetAiState&channel=1&user=${USER}&password=${PASS}
   method: GET
@@ -17,6 +19,7 @@
 
 - platform: rest
   name:  Kitchen Patio Movement
+  # unique_id: kitchen_patio_movement
   resource: !secret kitchen_patio_movement_url
   method: GET
   value_template: "{{ value_json[0].value.people.alarm_state }}"
@@ -25,6 +28,7 @@
 
 - platform: rest
   name: North East Window Movement
+  # unique_id: north_east_window_movement
   resource: !secret north_east_window_movement_url
   method: GET
   value_template: "{{ value_json[0].value.people.alarm_state }}"
@@ -33,6 +37,7 @@
 
 - platform: rest
   name: South Garden Movement
+  # unique_id: south_garden_movement
   resource: !secret south_garden_movement_url
   method: GET
   value_template: "{{ value_json[0].value.people.alarm_state }}"
@@ -41,6 +46,7 @@
 
 - platform: rest
   name: Parking Entrance People Movement
+  # unique_id: parking_entrance_people_movement
   resource: !secret parking_entrance_movement_url
   # this looks like this (because it checks any movement, not just person): http://${NVR_IP}/cgi-bin/api.cgi?cmd=GetMdState&channel=0&user=${USER}&password=${PASS}
   method: GET
@@ -50,6 +56,7 @@
 
 - platform: rest
   name: Parking Entrance Vehicle Movement
+  # unique_id: parking_entrance_vehicle_movement
   resource: !secret parking_entrance_movement_url
   # this looks like this (because it checks any movement, not just person): http://${NVR_IP}/cgi-bin/api.cgi?cmd=GetMdState&channel=0&user=${USER}&password=${PASS}
   method: GET
@@ -59,6 +66,7 @@
 
 - platform: rest
   name: Daddys Office Entrance Movement
+  # unique_id: daddys_office_entrance_movement
   resource: !secret daddys_office_entrance_movement_url
   method: GET
   value_template: "{{ value_json[0].value.people.alarm_state }}"
