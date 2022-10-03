@@ -1,0 +1,20 @@
+- id: antikounoupiko_on_night
+  alias: Turn on Antikounoupiko at night
+  trigger:
+  - at: '19:30:00'
+    platform: time
+  action:
+  - entity_id: switch.bedroom_plug
+    service: switch.turn_on
+  - entity_id: switch.lydia_plug
+    service: switch.turn_on
+- id: antikounoupiko_off_morning
+  alias: Turn off antikounoupiko in the morning
+  trigger:
+  - at: 06:00:00
+    platform: time
+  action:
+  - entity_id: switch.bedroom_plug
+    service: switch.turn_off
+  - entity_id: switch.lydia_plug
+    service: switch.turn_off

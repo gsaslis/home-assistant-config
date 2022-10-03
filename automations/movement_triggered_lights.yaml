@@ -1,0 +1,95 @@
+- id: outdoor_movement_notifications
+  alias: Notifications for outdoor movement
+  description: 'This automation pushes a notification to our phones when movement
+    is detected outdoors. '
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.kitchen_patio_movement
+    to: 'on'
+    from: 'off'
+  - platform: state
+    entity_id: binary_sensor.south_garden_movement
+    to: 'on'
+    from: 'off'
+  - platform: state
+    entity_id: binary_sensor.north_garden_movement
+    to: 'on'
+    from: 'off'
+  - platform: state
+    entity_id: binary_sensor.north_east_window_movement
+    to: 'on'
+    from: 'off'
+  condition: []
+  action:
+  - service: notify.mobile_app_gphone
+    data:
+      title: Movement detected
+      message: "Kitchen: {{ states('binary_sensor.kitchen_patio_movement') }} \nSouth:\
+        \ {{ states('binary_sensor.south_garden_movement') }} \nNorth: {{ states('binary_sensor.north_garden_movement')\
+        \ }} \nNorth-East: {{ states('binary_sensor.north_east_window_movement') }}"
+  mode: single
+- id: '1663354691881'
+  alias: Daddy's Office Movement
+  description: Turn on lights in the office when movement outside
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.daddys_office_entrance_movement
+      light_target:
+        entity_id:
+        - light.office_desk
+        - light.office_floor
+        - light.voreia_avli
+      no_motion_wait: 405
+- id: '1663831971121'
+  alias: South Garden Movement
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.south_garden_movement
+  condition:
+  - condition: sun
+    before: sunrise
+    after: sunset
+  action:
+  - service: light.turn_on
+    target:
+      entity_id:
+      - light.eisodos_1a
+      - light.eisodos_2a
+      - light.diadromos_eisodou
+  - delay:
+      hours: 0
+      minutes: 10
+      seconds: 0
+      milliseconds: 0
+  - service: light.turn_off
+    target:
+      entity_id:
+      - light.eisodos_1a
+      - light.eisodos_2a
+      - light.diadromos_eisodou
+  mode: single
+- id: 'car_park_mvt'
+  alias: Car Park Movement
+  description: 'Turn on lights in the car park when some movement detected'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.parking_entrance_people_movement
+  - platform: state
+    entity_id: binary_sensor.parking_entrance_vehicle_movement
+  action:
+  - service: light.turn_on
+    target:
+      entity_id:
+      - light.car_park_lights
+  - delay:
+      hours: 0
+      minutes: 4
+      seconds: 0
+      milliseconds: 0
+  - service: light.turn_off
+    target:
+      entity_id:
+      - light.car_park_lights
+  mode: single

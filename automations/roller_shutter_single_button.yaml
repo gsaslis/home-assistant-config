@@ -1,0 +1,143 @@
+# The automations here prevent both the 'UP' and 'DOWN' buttons from being pressed at the same time. 
+# This could lead to the motors overheating and burning out. 
+
+- id: saloni_ne_window_down_only
+  alias: Turn off NE Window up when down is pressed
+  trigger:
+    platform: state
+    entity_id: switch.down_ne_window_saloni
+    from: 'off'
+    to: 'on'
+  action:
+  - entity_id: switch.up_ne_window_saloni
+    service: switch.turn_off
+- id: saloni_ne_window_up_only
+  alias: Turn off NE Window down when up is pressed
+  trigger:
+    platform: state
+    entity_id: switch.up_ne_window_saloni
+    from: 'off'
+    to: 'on'
+  action:
+  - entity_id: switch.down_ne_window_saloni
+    service: switch.turn_off
+- id: saloni_nw_window_down_only
+  alias: Turn off NW Window up when down is pressed
+  trigger:
+    platform: state
+    entity_id: switch.down_nw_window_saloni
+    from: 'off'
+    to: 'on'
+  action:
+  - entity_id: switch.up_nw_window_saloni
+    service: switch.turn_off
+- id: saloni_nw_window_up_only
+  alias: Turn off NW Window down when up is pressed
+  trigger:
+    platform: state
+    entity_id: switch.up_nw_window_saloni
+    from: 'off'
+    to: 'on'
+  action:
+  - entity_id: switch.down_nw_window_saloni
+    service: switch.turn_off
+- id: saloni_n_window_down_only
+  alias: Turn off N Window up when down is pressed
+  trigger:
+    platform: state
+    entity_id: switch.down_n_window_saloni
+    from: 'off'
+    to: 'on'
+  action:
+  - entity_id: switch.up_n_window_saloni
+    service: switch.turn_off
+- id: saloni_n_window_up_only
+  alias: Turn off N Window down when up is pressed
+  trigger:
+    platform: state
+    entity_id: switch.up_n_window_saloni
+    from: 'off'
+    to: 'on'
+  action:
+  - entity_id: switch.down_n_window_saloni
+    service: switch.turn_off
+- id: saloni_door_down_only
+  alias: Turn off Saloni Door up when down is pressed
+  trigger:
+    platform: state
+    entity_id: switch.down_door_saloni
+    from: 'off'
+    to: 'on'
+  action:
+  - entity_id: switch.up_door_saloni
+    service: switch.turn_off
+- id: saloni_door_up_only
+  alias: Turn off Saloni Door down when up is pressed
+  trigger:
+    platform: state
+    entity_id: switch.up_door_saloni
+    from: 'off'
+    to: 'on'
+  action:
+  - entity_id: switch.down_door_saloni
+    service: switch.turn_off
+- id: saloni_patio_window_down_only
+  alias: Turn off Saloni Patio Window up when down is pressed
+  trigger:
+    platform: state
+    entity_id: switch.down_patio_window_living_room
+    from: 'off'
+    to: 'on'
+  action:
+  - entity_id: switch.up_patio_window_living_room
+    service: switch.turn_off
+- id: saloni_patio_window_up_only
+  alias: Turn off Saloni Patio Window down when up is pressed
+  trigger:
+    platform: state
+    entity_id: switch.up_patio_window_living_room
+    from: 'off'
+    to: 'on'
+  action:
+  - entity_id: switch.down_patio_window_living_room
+    service: switch.turn_off
+- id: kitchen_patio_window_down_only
+  alias: Turn off Kitchen Patio Window up when down is pressed
+  trigger:
+    platform: state
+    entity_id: switch.down_window_kitchen
+    from: 'off'
+    to: 'on'
+  action:
+  - entity_id: switch.up_window_kitchen
+    service: switch.turn_off
+- id: kitchen_patio_window_up_only
+  alias: Turn off Kitchen Patio Window down when up is pressed
+  trigger:
+    platform: state
+    entity_id: switch.up_window_kitchen
+    from: 'off'
+    to: 'on'
+  action:
+  - entity_id: switch.down_window_kitchen
+    service: switch.turn_off
+- id: kitchen_door_down_only
+  alias: Turn off Kitchen Door up when down is pressed
+  trigger:
+    platform: state
+    entity_id: switch.down_door_kitchen
+    from: 'off'
+    to: 'on'
+  action:
+  - entity_id: switch.up_door_kitchen
+    service: switch.turn_off
+- id: kitchen_door_up_only
+  alias: turn off reading light
+  trigger:
+  - at: 01:03:00
+    platform: time
+  action:
+  - data:
+      entity_id: switch.s20_plug_bedroom
+    service: switch.turn_off
+  condition: []

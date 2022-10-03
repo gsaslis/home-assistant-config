@@ -1,0 +1,364 @@
+
+######################### NORTH GARDEN ##############################
+
+- id: water_north_plants
+  alias: Turn on North Drip Line at 7:05, on Mon, Wed, Fri
+  trigger:
+  - at: 07:05
+    platform: time
+  condition:
+  - condition: and
+    conditions:
+    - condition: time
+      weekday:
+      - mon
+      - wed
+      - fri
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: sensor.ultimate_cretan_rain_sensor
+        state: unknown
+      - condition: numeric_state
+        entity_id: sensor.ultimate_cretan_rain_sensor
+        above: '1400'
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.24vac_converter
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 10
+      milliseconds: 0
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.north_drip_line
+  - delay:
+      hours: 0
+      minutes: 5
+      seconds: 0
+      milliseconds: 0
+  - service: switch.turn_off
+    target:
+      entity_id: switch.north_drip_line
+  mode: single
+- id: water_grass_from_east_sprinklers
+  alias: 'Turn on east sprinklers #1'
+  trigger:
+  - at: 06:10
+    platform: time
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: sensor.ultimate_cretan_rain_sensor
+      state: unknown
+    - condition: numeric_state
+      entity_id: sensor.ultimate_cretan_rain_sensor
+      above: '1400'
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.north_drip_line
+  - entity_id: switch.west_sprinklers
+    service: switch.turn_off
+  - service: switch.turn_on
+    target:
+      entity_id: switch.24vac_converter
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 10
+      milliseconds: 0
+  - entity_id: switch.east_sprinklers
+    service: switch.turn_on
+  - delay:
+      hours: 0
+      minutes: 5
+      seconds: 0
+      milliseconds: 0
+  - service: switch.turn_off
+    target:
+      entity_id: switch.east_sprinklers
+  mode: single
+- id: water_grass_from_west_sprinklers
+  alias: 'Turn on west sprinklers #1'
+  trigger:
+  - at: 05:40
+    platform: time
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: sensor.ultimate_cretan_rain_sensor
+      state: unknown
+    - condition: numeric_state
+      entity_id: sensor.ultimate_cretan_rain_sensor
+      above: '1400'
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.north_drip_line
+  - entity_id: switch.east_sprinklers
+    service: switch.turn_off
+  - service: switch.turn_on
+    target:
+      entity_id: switch.24vac_converter
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 10
+      milliseconds: 0
+  - entity_id: switch.west_sprinklers
+    service: switch.turn_on
+  - delay:
+      hours: 0
+      minutes: 7
+      seconds: 0
+      milliseconds: 0
+  - service: switch.turn_off
+    target:
+      entity_id: switch.west_sprinklers
+  mode: single
+- id: water_grass_from_east_sprinklers_2
+  alias: 'Turn on east sprinklers #2'
+  description: ''
+  trigger:
+  - at: 06:25
+    platform: time
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: sensor.ultimate_cretan_rain_sensor
+      state: unknown
+    - condition: numeric_state
+      entity_id: sensor.ultimate_cretan_rain_sensor
+      above: '1400'
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.north_drip_line
+  - entity_id: switch.west_sprinklers
+    service: switch.turn_off
+  - service: switch.turn_on
+    target:
+      entity_id: switch.24vac_converter
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 10
+      milliseconds: 0
+  - entity_id: switch.east_sprinklers
+    service: switch.turn_on
+  - delay:
+      hours: 0
+      minutes: 5
+      seconds: 0
+      milliseconds: 0
+  - service: switch.turn_off
+    target:
+      entity_id: switch.east_sprinklers
+  mode: single
+- id: water_grass_from_west_sprinklers_2
+  alias: 'Turn on west sprinklers #2'
+  description: ''
+  trigger:
+  - at: 05:10
+    platform: time
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: sensor.ultimate_cretan_rain_sensor
+      state: unknown
+    - condition: numeric_state
+      entity_id: sensor.ultimate_cretan_rain_sensor
+      above: '1400'
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.north_drip_line
+  - entity_id: switch.east_sprinklers
+    service: switch.turn_off
+  - service: switch.turn_on
+    target:
+      entity_id: switch.24vac_converter
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 10
+      milliseconds: 0
+  - entity_id: switch.west_sprinklers
+    service: switch.turn_on
+  - delay:
+      hours: 0
+      minutes: 7
+      seconds: 0
+      milliseconds: 0
+  - service: switch.turn_off
+    target:
+      entity_id: switch.west_sprinklers
+  mode: single
+
+
+- id: stop_watering_grass
+  alias: Turn off watering
+  trigger:
+  - at: 08:00
+    platform: time
+  - at: 09:30:00
+    platform: time
+  - at: '10:30:00'
+    platform: time
+  - at: '11:30:00'
+    platform: time
+  - at: '13:30:00'
+    platform: time
+  - at: '15:30:00'
+    platform: time
+  - at: '19:30'
+    platform: time
+  - at: '21:30:00'
+    platform: time
+  - platform: time
+    at: '22:30'
+  - platform: time
+    at: '23:30'
+  - platform: time
+    at: 02:30
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.north_drip_line
+      - switch.24vac_converter
+      - switch.west_sprinklers
+      - switch.east_sprinklers
+  mode: single
+
+
+
+######################### SOUTH GARDEN #########################
+
+
+
+- id: '1625421884835'
+  alias: South Garden Top Watering Line
+  description: ''
+  trigger:
+  - platform: time
+    at: 04:05
+  condition: []
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.south_garden_1
+  - service: switch.turn_off
+    target:
+      entity_id:
+      - switch.south_garden_2
+      - switch.south_garden_3
+  - delay:
+      hours: 0
+      minutes: 7
+      seconds: 0
+      milliseconds: 0
+  - service: switch.turn_off
+    target:
+      entity_id: switch.south_garden_1
+  mode: single
+- id: '1625422055443'
+  alias: South Garden Middle Watering Line
+  description: ''
+  trigger:
+  - platform: time
+    at: 04:20
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id:
+      - switch.south_garden_1
+      - switch.south_garden_3
+  - service: switch.turn_on
+    target:
+      entity_id: switch.south_garden_2
+  - delay:
+      hours: 0
+      minutes: 4
+      seconds: 0
+      milliseconds: 0
+  - service: switch.turn_off
+    target:
+      entity_id: switch.south_garden_2
+  mode: single
+- id: '1625422173210'
+  alias: South Garden Bottom Watering Line
+  description: ''
+  trigger:
+  - platform: time
+    at: 04:25
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id:
+      - switch.south_garden_1
+      - switch.south_garden_2
+  - service: switch.turn_on
+    target:
+      entity_id: switch.south_garden_3
+  - delay:
+      hours: 0
+      minutes: 10
+      seconds: 0
+      milliseconds: 0
+  - service: switch.turn_off
+    target:
+      entity_id: switch.south_garden_3
+  mode: single
+- id: '1625422263093'
+  alias: South Garden Watering Off
+  description: ''
+  trigger:
+  - platform: time
+    at: 04:35
+  - platform: time
+    at: 05:15
+  - platform: time
+    at: 06:30
+  - platform: time
+    at: 07:30
+  - platform: time
+    at: 08:30
+  - platform: time
+    at: 09:30
+  - platform: time
+    at: '11:30'
+  - platform: time
+    at: '14:30'
+  - platform: time
+    at: '17:30'
+  - platform: time
+    at: '20:30'
+  - platform: time
+    at: '23:30'
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id:
+      - switch.south_garden_1
+      - switch.south_garden_2
+      - switch.south_garden_3
+  mode: single
