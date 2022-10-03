@@ -732,13 +732,26 @@
       - light.eisodos_2a
       - light.diadromos_eisodou
   mode: single
-- id: '1664355874806'
+- id: 'car_park_mvt'
   alias: Car Park Movement
-  description: Turn on lights in the car park when some movement detected
-  use_blueprint:
-    path: homeassistant/motion_light.yaml
-    input:
-      motion_entity: binary_sensor.parking_entrance_movement
-      no_motion_wait: 300
-      light_target:
-        entity_id: light.car_park_lights
+  description: 'Turn on lights in the car park when some movement detected'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.parking_entrance_people_movement
+  - platform: state
+    entity_id: binary_sensor.parking_entrance_vehicle_movement
+  action:
+  - service: light.turn_on
+    target:
+      entity_id:
+      - light.car_park_lights
+  - delay:
+      hours: 0
+      minutes: 4
+      seconds: 0
+      milliseconds: 0
+  - service: light.turn_off
+    target:
+      entity_id:
+      - light.car_park_lights
+  mode: single

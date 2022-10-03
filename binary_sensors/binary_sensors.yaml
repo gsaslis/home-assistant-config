@@ -14,6 +14,7 @@
   value_template: "{{ value_json[0].value.people.alarm_state }}"
   scan_interval: 2
   device_class: motion
+
 - platform: rest
   name:  Kitchen Patio Movement
   resource: !secret kitchen_patio_movement_url
@@ -21,6 +22,7 @@
   value_template: "{{ value_json[0].value.people.alarm_state }}"
   scan_interval: 2
   device_class: motion
+
 - platform: rest
   name: North East Window Movement
   resource: !secret north_east_window_movement_url
@@ -28,6 +30,7 @@
   value_template: "{{ value_json[0].value.people.alarm_state }}"
   scan_interval: 2
   device_class: motion
+
 - platform: rest
   name: South Garden Movement
   resource: !secret south_garden_movement_url
@@ -35,12 +38,22 @@
   value_template: "{{ value_json[0].value.people.alarm_state }}"
   scan_interval: 2
   device_class: motion
+
 - platform: rest
-  name: Parking Entrance Movement
+  name: Parking Entrance People Movement
   resource: !secret parking_entrance_movement_url
   # this looks like this (because it checks any movement, not just person): http://${NVR_IP}/cgi-bin/api.cgi?cmd=GetMdState&channel=0&user=${USER}&password=${PASS}
   method: GET
-  value_template: "{{ value_json[0].value.state }}"
+  value_template: "{{ value_json[0].value.people.alarm_state }}"
+  scan_interval: 2
+  device_class: motion
+
+- platform: rest
+  name: Parking Entrance Vehicle Movement
+  resource: !secret parking_entrance_movement_url
+  # this looks like this (because it checks any movement, not just person): http://${NVR_IP}/cgi-bin/api.cgi?cmd=GetMdState&channel=0&user=${USER}&password=${PASS}
+  method: GET
+  value_template: "{{ value_json[0].value.vehicle.alarm_state }}"
   scan_interval: 2
   device_class: motion
 
@@ -51,4 +64,3 @@
   value_template: "{{ value_json[0].value.people.alarm_state }}"
   scan_interval: 2
   device_class: motion
-
