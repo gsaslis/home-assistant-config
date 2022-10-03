@@ -3,43 +3,51 @@
 
 - platform: mqtt
   name: "North Drip Line"
+  unique_id: north_drip_line  
   state_topic: "stat/tasmota_north_garden/POWER1"
   command_topic: "cmnd/tasmota_north_garden/POWER1"
 
 - platform: mqtt
   name: "East Sprinklers"
+  unique_id: east_sprinklers
   state_topic: "stat/tasmota_north_garden/POWER2"
   command_topic: "cmnd/tasmota_north_garden/POWER2"
 
 - platform: mqtt
   name: "West Sprinklers"
+  unique_id: west_sprinklers
   state_topic: "stat/tasmota_north_garden/POWER3"
   command_topic: "cmnd/tasmota_north_garden/POWER3"
 
 - platform: mqtt
   name: "24VAC Converter"
+  unique_id: "24vac_converter"
   state_topic: "stat/tasmota_north_garden/POWER4"
   command_topic: "cmnd/tasmota_north_garden/POWER4"
 
 
 - platform: mqtt
   name: "South Garden 1"
+  unique_id: south_garden_1
   state_topic: "stat/tasmota_south_garden/POWER1"
   command_topic: "cmnd/tasmota_south_garden/POWER1"
 
 - platform: mqtt
   name: "South Garden 2"
+  unique_id: south_garden_2
   state_topic: "stat/tasmota_south_garden/POWER2"
   command_topic: "cmnd/tasmota_south_garden/POWER2"
 
 - platform: mqtt
   name: "South Garden 3"
+  unique_id: south_garden_3
   state_topic: "stat/tasmota_south_garden/POWER3"
   command_topic: "cmnd/tasmota_south_garden/POWER3"
 
 
 - platform: mqtt
   name: "South Garden 4"
+  unique_id: south_garden_4
   state_topic: "stat/tasmota_south_garden/POWER4"
   command_topic: "cmnd/tasmota_south_garden/POWER4"
 

@@ -42,30 +42,35 @@
 
 - platform: mqtt
   name: "Office Consumption"
+  unique_id: office_consumption  
   state_topic: "shellies/shelly1pm-D8BFC019C749/relay/0/power"
   unit_of_measurement: "Watt"
   state_class: "measurement"
 
 - platform: mqtt
   name: "Acquarium Lights Consumption"
+  unique_id: acquarium_lights_consumption
   state_topic: "shellies/shellyplug-s-F8C5C0/relay/0/power"
   unit_of_measurement: "Watt"
   state_class: "measurement"
 
 - platform: mqtt
   name: "Car Park Lights Consumption"
+  unique_id: car_park_lights_consumption
   state_topic: "shellies/shelly1pm-98CDAC1EED2D/relay/0/power"
   unit_of_measurement: "Watt"
   state_class: "measurement"
 
 - platform: mqtt
   name: "Lydia Plug Consumption"
+  unique_id: lydia_plug_consumption
   state_topic: "shellies/shellyplug-s-B4D686/relay/0/power"
   unit_of_measurement: "Watt"
   state_class: "measurement"
 
 - platform: mqtt
   name: "Bedroom Plug Consumption"
+  unique_id: bedroom_plug_consumption
   state_topic: "shellies/shellyplug-s-B52E5A/relay/0/power"
   unit_of_measurement: "Watt"
   state_class: "measurement"

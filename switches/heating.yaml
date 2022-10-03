@@ -2,6 +2,7 @@
 
 - platform: mqtt
   name: "Basement Heating"
+  unique_id: basement_heating  
   state_topic: "shellies/shelly1-E098068CE35F/relay/0"
   command_topic: "shellies/shelly1-E098068CE35F/relay/0/command"
   qos: 2
@@ -11,6 +12,7 @@
 
 - platform: mqtt
   name: "Ground Floor Heating"
+  unique_id: ground_floor_heating
   state_topic: "shellies/shelly1-E098068CCDF2/relay/0"
   command_topic: "shellies/shelly1-E098068CCDF2/relay/0/command"
   qos: 2
@@ -20,6 +22,7 @@
 
 - platform: mqtt
   name: "Upstairs Heating"
+  unique_id: upstairs_heating
   state_topic: "shellies/shelly1-E098068CDF25/relay/0"
   command_topic: "shellies/shelly1-E098068CDF25/relay/0/command"
   qos: 2

@@ -1,10 +1,12 @@
 - platform: mqtt
   name: "S20 Plug 0"
+  unique_id: s20_plug_0
   state_topic: "stat/sonoff_s20_0/POWER"
   command_topic: "cmnd/sonoff_s20_0/POWER"
 
 - platform: mqtt
   name: "Lydia Plug"
+  unique_id: lydia_plug
   state_topic: "shellies/shellyplug-s-B52E5A/relay/0"
   command_topic: "shellies/shellyplug-s-B52E5A/relay/0/command"
 #   availability_topic: "shellies/shellyplug-s-9DD406/online"
@@ -19,6 +21,7 @@
 
 - platform: mqtt
   name: "Bedroom Plug"
+  unique_id: bedroom_plug
   state_topic: "shellies/shellyplug-s-B4D686/relay/0"
   command_topic: "shellies/shellyplug-s-B4D686/relay/0/command"
 #   availability_topic: "shellies/shellyplug-s-9DD406/online"
@@ -32,7 +35,8 @@
   retain: false
 
 - platform: mqtt
-  name: "Mpriza Eisodou"
+  name: "Entrance Power Plug"
+  unique_id: entrance_power_plug
   state_topic: "stat/tasmota_E2D95C/POWER2"
   command_topic: "cmnd/tasmota_E2D95C/POWER2"
 
