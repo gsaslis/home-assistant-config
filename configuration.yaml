@@ -26,7 +26,13 @@ tts:
     voice: en_UK/apope_low
 
 group: !include groups.yaml
-automation: !include_dir_merge_list automations/
+
+# My own handmade automations
+automation manual: !include_dir_merge_list automations/
+
+# Automations I create in the UI
+automation ui: !include automations.yaml
+
 script: !include scripts.yaml
 
 homekit:

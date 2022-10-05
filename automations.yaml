@@ -1,8 +1,288 @@
+########################### AQUARIUM LIGHTS ###########################
+
+- id: aquarium_lights_off_night
+  alias: Aquarium lights off at night
+  trigger:
+  - at: 00:00:00
+    platform: time
+  action:
+  - entity_id: light.aquarium_lights
+    service: light.turn_off
+  mode: single
+- id: aquarium_lights_on_evening
+  alias: Aquarium lights on in the evening
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: 00:15:00
+  action:
+  - entity_id: light.aquarium_lights
+    service: light.turn_on
+- id: fireplace_lights_off_night
+  alias: Fireplace lights off at night
+  trigger:
+  - at: 01:00
+    platform: time
+  action:
+  - service: light.turn_off
+    target:
+      entity_id: light.fireplace
+
+
+
+
+########################### MEETING LIGHT ###########################
+
+
+- id: meeting_light_on_when_camera_on
+  alias: Meeting Light on when call starts
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.macbook_pro_camera_in_use_2
+    from: 'off'
+    to: 'on'
+  action:
+  - service: switch.turn_on
+    entity_id: switch.s20_plug_0
+  - service: light.turn_on
+    entity_id: light.office_floor
+  - service: light.turn_on
+    data: {}
+    target:
+      entity_id: light.office_desk
+  mode: single
+- id: meeting_light_off_when_camera_off
+  alias: Meeting Light off when call ends
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.macbook_pro_camera_in_use_2
+    from: 'on'
+    to: 'off'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.s20_plug_0
+  - service: light.turn_off
+    target:
+      entity_id:
+      - light.office_floor
+      - light.office_desk
+  mode: single
+
+
+
+########################### MOSQUITO REPELLENT ###########################
+
+- id: antikounoupiko_on_night
+  alias: Mosquito Repellent on at night
+  trigger:
+  - at: '19:30:00'
+    platform: time
+  action:
+  - entity_id: switch.bedroom_plug
+    service: switch.turn_on
+  - entity_id: switch.lydia_plug
+    service: switch.turn_on
+- id: antikounoupiko_off_morning
+  alias: Mosquito Repellent off in the morning
+  trigger:
+  - at: 06:00:00
+    platform: time
+  action:
+  - entity_id: switch.bedroom_plug
+    service: switch.turn_off
+  - entity_id: switch.lydia_plug
+    service: switch.turn_off
+
+
+
+
+
+########################### NIGHT HEATING ###########################
+
+- id: heating_at_night
+  alias: Heating @ night
+  trigger:
+  - at: '22:43'
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    service: climate.turn_off
+    target:
+      entity_id:
+      - climate.ground_floor_thermostat
+      - climate.daddys_office_thermostat
+  - data:
+      entity_id: climate.bedrooms_thermostat
+    service: climate.turn_on
+  - service: climate.set_temperature
+    data:
+      hvac_mode: heat
+      temperature: 18.5
+    target:
+      entity_id: climate.bedrooms_thermostat
+- id: heating_at_morning
+  alias: Heating @ morning
+  trigger:
+  - at: 07:03:00
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id: climate.bedrooms_thermostat
+    service: climate.turn_off
+
+
+
+
+
+
+
+
+########################### MOTION-TRIGGERED LIGHTS ###########################
+
+- id: outdoor_movement_notifications
+  alias: Notifications for outdoor movement
+  description: 'This automation pushes a notification to our phones when movement
+    is detected outdoors. '
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.kitchen_patio_movement
+    to: 'on'
+    from: 'off'
+  - platform: state
+    entity_id: binary_sensor.south_garden_movement
+    to: 'on'
+    from: 'off'
+  - platform: state
+    entity_id: binary_sensor.north_garden_movement
+    to: 'on'
+    from: 'off'
+  - platform: state
+    entity_id: binary_sensor.north_east_window_movement
+    to: 'on'
+    from: 'off'
+  condition: []
+  action:
+  - service: notify.mobile_app_gphone
+    data:
+      title: Movement detected
+      message: "Kitchen: {{ states('binary_sensor.kitchen_patio_movement') }} \nSouth:\
+        \ {{ states('binary_sensor.south_garden_movement') }} \nNorth: {{ states('binary_sensor.north_garden_movement')\
+        \ }} \nNorth-East: {{ states('binary_sensor.north_east_window_movement') }}"
+  mode: single
+- id: '1663354691881'
+  alias: Daddy's Office Movement
+  description: Turn on lights in the office when movement outside
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.daddys_office_entrance_movement
+      light_target:
+        entity_id:
+        - light.office_desk
+        - light.office_floor
+        - light.north_garden
+      no_motion_wait: 405
+- id: '1663831971121'
+  alias: South Garden Movement
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.south_garden_movement
+  condition:
+  - condition: sun
+    before: sunrise
+    after: sunset
+  action:
+  - service: light.turn_on
+    target:
+      entity_id:
+      - light.main_entrance_1
+      - light.main_entrance_2
+      - light.garden_path
+  - delay:
+      hours: 0
+      minutes: 10
+      seconds: 0
+      milliseconds: 0
+  - service: light.turn_off
+    target:
+      entity_id:
+      - light.main_entrance_1
+      - light.main_entrance_2
+      - light.garden_path
+  mode: single
+- id: 'car_park_mvt'
+  alias: Car Park Movement
+  description: 'Turn on lights in the car park when some movement detected'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.parking_entrance_people_movement
+  - platform: state
+    entity_id: binary_sensor.parking_entrance_vehicle_movement
+  action:
+  - service: light.turn_on
+    target:
+      entity_id:
+      - light.car_park_lights
+  - delay:
+      hours: 0
+      minutes: 4
+      seconds: 0
+      milliseconds: 0
+  - service: light.turn_off
+    target:
+      entity_id:
+      - light.car_park_lights
+  mode: single
+
+
+
+
+
+
+
+
+########################### GARDEN LIGHTS ###########################
+
+- id: outside_lights_at_night
+  alias: Outside Lights on, half an hour after sunset
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: 00:30:00
+  action:
+  - entity_id: group.outside_lights
+    service: light.turn_on
+- id: outside_lights_morning
+  alias: Outside Lights off, 45m before sunrise
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: -00:45:00
+  action:
+  - entity_id: group.outside_lights
+    service: light.turn_off
+
+
+
+
+
+
+
+
+
+
+
+
+########################### GARDEN WATERING ###########################
+
 
 ######################### NORTH GARDEN ##############################
 
 - id: water_north_plants
-  alias: Turn on North Drip Line at 7:05, on Mon, Wed, Fri
+  alias: North Drip Line on at 7:05, on Mon, Wed, Fri
   trigger:
   - at: 07:05
     platform: time
@@ -45,7 +325,7 @@
       entity_id: switch.north_drip_line
   mode: single
 - id: water_grass_from_east_sprinklers
-  alias: 'Turn on east sprinklers #1'
+  alias: 'East sprinklers on #1'
   trigger:
   - at: 06:10
     platform: time
@@ -86,7 +366,7 @@
       entity_id: switch.east_sprinklers
   mode: single
 - id: water_grass_from_west_sprinklers
-  alias: 'Turn on west sprinklers #1'
+  alias: 'West sprinklers on #1'
   trigger:
   - at: 05:40
     platform: time
@@ -126,7 +406,7 @@
       entity_id: switch.west_sprinklers
   mode: single
 - id: water_grass_from_east_sprinklers_2
-  alias: 'Turn on east sprinklers #2'
+  alias: 'East sprinklers on #2'
   description: ''
   trigger:
   - at: 06:25
@@ -168,7 +448,7 @@
       entity_id: switch.east_sprinklers
   mode: single
 - id: water_grass_from_west_sprinklers_2
-  alias: 'Turn on west sprinklers #2'
+  alias: 'West sprinklers on #2'
   description: ''
   trigger:
   - at: 05:10
@@ -211,7 +491,7 @@
 
 
 - id: stop_watering_grass
-  alias: Turn off watering
+  alias: Watering off
   trigger:
   - at: 08:00
     platform: time
@@ -362,3 +642,47 @@
       - switch.south_garden_2
       - switch.south_garden_3
   mode: single
+
+
+
+
+
+
+
+
+
+
+
+
+########################### WINTER LIGHTS ###########################
+
+
+- id: tree_lights_on_morning
+  alias: Xmas lights on in the morning
+  trigger:
+  - at: 07:00
+    platform: time
+  action:
+  - service: light.turn_on
+    target:
+      entity_id: light.fireplace
+- id: office_lights_off_evening
+  alias: Office xmas lights off in the evening
+  trigger:
+  - at: '20:00'
+    platform: time
+  action:
+  - service: light.turn_off
+    target:
+      entity_id: light.snail_lights
+- id: office_lights_on_morning
+  alias: Office xmas lights on in the morning
+  trigger:
+  - at: 09:00
+    platform: time
+  action:
+  - service: light.turn_on
+    target:
+      entity_id: light.snail_lights
+
+
