@@ -110,3 +110,15 @@ fastdotcom:
 camera: !include cameras.yaml
 
 cover: !include_dir_merge_list covers/
+
+lovelace:
+  # main dashboard is UI-generated
+  mode: storage
+  # but we can also add our own yaml dashboards
+  dashboards:
+    lovelace-yaml:
+      mode: yaml
+      title: !secret home_name
+      icon: mdi:home-automation
+      show_in_sidebar: true
+      filename: dashboards/home.yaml
