@@ -1,0 +1,65 @@
+= Home Assistant Config by Yorgos
+
+:toc: auto
+
+This repo exposes the Home Assistant functionality I've built up over the years
+that I think is worth sharing with the world. (i.e. this isn't "everything", 
+nor is this repo somehow linked (today) to my actual running home assistant 
+instance). Docs are currently work-in-progress, but the configuration is 100% 
+functional. 
+
+== Roller Shutters
+
+TODO: https://github.com/gsaslis/home-assistant-config/issues/4
+
+== Thermostats
+
+TODO: https://github.com/gsaslis/home-assistant-config/issues/3
+
+== Camera Movement Automation
+
+TODO: https://github.com/gsaslis/home-assistant-config/issues/2
+
+== Water Leak Sensor
+
+TODO: https://github.com/gsaslis/home-assistant-config/issues/1
+
+== Meeting Light
+
+TODO: https://github.com/gsaslis/home-assistant-config/issues/5
+
+== Mosquito Repellent 
+
+TODO: https://github.com/gsaslis/home-assistant-config/issues/6
+
+== Watering 
+
+TODO: https://github.com/gsaslis/home-assistant-config/issues/7
+
+== Lights Automation
+
+TODO: https://github.com/gsaslis/home-assistant-config/issues/8
+
+== Rain Sensor
+
+TODO: https://github.com/gsaslis/home-assistant-config/issues/9
+
+== Power Consumption
+
+TODO: https://github.com/gsaslis/home-assistant-config/issues/10
+
+== Cameras
+
+TODO: https://github.com/gsaslis/home-assistant-config/issues/11
+
+== Speed Test
+
+TODO: https://github.com/gsaslis/home-assistant-config/issues/12
+
+== Text-to-speech with mimic3
+
+TODO: https://github.com/gsaslis/home-assistant-config/issues/13
+
+== Apple Home integration
+
+TODO: https://github.com/gsaslis/home-assistant-config/issues/14
