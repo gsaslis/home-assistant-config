@@ -1,10 +1,8 @@
-- platform: mqtt
-  state_topic: "stat/ultimateCretanRainSensor"
+- state_topic: "stat/ultimateCretanRainSensor"
   name: "Ultimate Cretan Rain Sensor"
   unique_id: "ultimate_cretan_rain_sensor"
 
-- platform: mqtt
-  name: "Bedroom Temperature"
+- name: "Bedroom Temperature"
   unique_id: bedroom_temperature
   state_topic: "shellies/shelly1-E098068CE394/ext_temperature/0"
   unit_of_measurement: '°C'
@@ -12,8 +10,7 @@
   device_class: "temperature"
   qos: 2
 
-- platform: mqtt
-  name: "Attic Temperature"
+- name: "Attic Temperature"
   unique_id: attic_temperature
   state_topic: "shellies/shellyflood-F2B1B4/sensor/temperature"
   unit_of_measurement: '°C'
@@ -21,8 +18,7 @@
   device_class: "temperature"
   qos: 2
 
-- platform: mqtt
-  name: "Kitchen Temperature"
+- name: "Kitchen Temperature"
   unique_id: kitchen_temperature
   state_topic: "shellies/shelly1-E098068CCDF2/ext_temperature/0"
   unit_of_measurement: '°C'
@@ -30,8 +26,7 @@
   device_class: "temperature"
   qos: 2
 
-- platform: mqtt
-  name: "Office Temperature"
+- name: "Office Temperature"
   unique_id: basement_temperature
 #   state_topic: "shellies/shelly1pm-A4CF12F3D65C/ext_temperature/0"
   state_topic: "shellies/shelly1pm-D8BFC019C749/ext_temperature/0"
@@ -40,36 +35,31 @@
   device_class: "temperature"
   qos: 2
 
-- platform: mqtt
-  name: "Office Consumption"
+- name: "Office Consumption"
   unique_id: office_consumption  
   state_topic: "shellies/shelly1pm-D8BFC019C749/relay/0/power"
   unit_of_measurement: "Watt"
   state_class: "measurement"
 
-- platform: mqtt
-  name: "Acquarium Lights Consumption"
+- name: "Acquarium Lights Consumption"
   unique_id: acquarium_lights_consumption
   state_topic: "shellies/shellyplug-s-F8C5C0/relay/0/power"
   unit_of_measurement: "Watt"
   state_class: "measurement"
 
-- platform: mqtt
-  name: "Car Park Lights Consumption"
+- name: "Car Park Lights Consumption"
   unique_id: car_park_lights_consumption
   state_topic: "shellies/shelly1pm-98CDAC1EED2D/relay/0/power"
   unit_of_measurement: "Watt"
   state_class: "measurement"
 
-- platform: mqtt
-  name: "Lydia Plug Consumption"
+- name: "Lydia Plug Consumption"
   unique_id: lydia_plug_consumption
   state_topic: "shellies/shellyplug-s-B4D686/relay/0/power"
   unit_of_measurement: "Watt"
   state_class: "measurement"
 
-- platform: mqtt
-  name: "Bedroom Plug Consumption"
+- name: "Bedroom Plug Consumption"
   unique_id: bedroom_plug_consumption
   state_topic: "shellies/shellyplug-s-B52E5A/relay/0/power"
   unit_of_measurement: "Watt"

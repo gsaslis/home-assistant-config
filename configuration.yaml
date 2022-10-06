@@ -62,11 +62,17 @@ mqtt:
   broker: mosquitto.k3s.yorgos.net.gr
   port: 31883
 
+  light: !include_dir_merge_list lights/
 
-sensor: !include_dir_merge_list sensors/
+  switch: !include_dir_merge_list switches/
 
-light: !include_dir_merge_list lights/
-  
+  sensor: !include_dir_merge_list sensors/
+
+  binary_sensor: !include binary_sensors/mqtt_sensors.yaml
+
+  cover: !include_dir_merge_list covers/
+
+binary_sensor: !include binary_sensors/rest_sensors.yaml
 # no longer used
 # light groups:
 #   - platform: group
@@ -94,9 +100,6 @@ light: !include_dir_merge_list lights/
 #       - light.southeast_white_bulb
 #       - light.s_sw_white_bulb
 
-switch: !include_dir_merge_list switches/
-
-binary_sensor: !include_dir_merge_list binary_sensors/
 
 climate: !include_dir_merge_list climate/
 
@@ -114,8 +117,6 @@ fastdotcom:
 
 
 camera: !include cameras.yaml
-
-cover: !include_dir_merge_list covers/
 
 scene: !include scenes.yaml
 

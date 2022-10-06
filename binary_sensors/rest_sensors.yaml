@@ -1,12 +1,3 @@
-- platform: mqtt
-  state_topic: "shellies/shellyflood-F2B1B4/sensor/flood"
-  unique_id: flood
-  name: "Flood"
-  #icon: mdi:pipe-leak
-  payload_on: "true"
-  payload_off: "false"
-  device_class: moisture
-
 - platform: rest
   name: North Garden Movement
   # unique_id: north_garden_movement  

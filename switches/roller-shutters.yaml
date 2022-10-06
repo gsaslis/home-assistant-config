@@ -2,65 +2,51 @@
 
 # no longer the preferred way since moving to `cover`s
 
-- platform: mqtt
-  name: "[UP] Window, Kitchen"
+- name: "[UP] Window, Kitchen"
   state_topic: "stat/tasmota_B4AB0B/POWER3"
   command_topic: "cmnd/tasmota_B4AB0B/POWER3"
-- platform: mqtt
-  name: "[DOWN] Window, Kitchen"
+- name: "[DOWN] Window, Kitchen"
   state_topic: "stat/tasmota_BE39B9/POWER3"
   command_topic: "cmnd/tasmota_BE39B9/POWER3"
 
-- platform: mqtt
-  name: "[UP] Door, Kitchen"
+- name: "[UP] Door, Kitchen"
   state_topic: "stat/tasmota_B4AB0B/POWER1"
   command_topic: "cmnd/tasmota_B4AB0B/POWER1"
-- platform: mqtt
-  name: "[DOWN] Door, Kitchen"
+- name: "[DOWN] Door, Kitchen"
   state_topic: "stat/tasmota_BE39B9/POWER1"
   command_topic: "cmnd/tasmota_BE39B9/POWER1"
 
-- platform: mqtt
-  name: "[UP] Patio Window, Living Room"
+- name: "[UP] Patio Window, Living Room"
   state_topic: "stat/tasmota_C9332C/POWER2"
   command_topic: "cmnd/tasmota_C9332C/POWER2"
-- platform: mqtt
-  name: "[DOWN] Patio Window, Living Room"
+- name: "[DOWN] Patio Window, Living Room"
   state_topic: "stat/tasmota_C9332C/POWER1"
   command_topic: "cmnd/tasmota_C9332C/POWER1"
 
-- platform: mqtt
-  name: "[UP] Door, Saloni"
+- name: "[UP] Door, Saloni"
   state_topic: "stat/tasmota_E295F2/POWER3"
   command_topic: "cmnd/tasmota_E295F2/POWER3"
-- platform: mqtt
-  name: "[Down] Door, Saloni"
+- name: "[Down] Door, Saloni"
   state_topic: "stat/tasmota_E2DAC4/POWER3"
   command_topic: "cmnd/tasmota_E2DAC4/POWER3"
 
-- platform: mqtt
-  name: "[UP] NE Window, Saloni"
+- name: "[UP] NE Window, Saloni"
   state_topic: "stat/tasmota_E29C1D/POWER3"
   command_topic: "cmnd/tasmota_E29C1D/POWER3"
-- platform: mqtt
-  name: "[Down] NE Window, Saloni"
+- name: "[Down] NE Window, Saloni"
   state_topic: "stat/tasmota_E29931/POWER3"
   command_topic: "cmnd/tasmota_E29931/POWER3"
 
-- platform: mqtt
-  name: "[UP] N Window, Saloni"
+- name: "[UP] N Window, Saloni"
   state_topic: "stat/tasmota_E29C1D/POWER2"
   command_topic: "cmnd/tasmota_E29C1D/POWER2"
-- platform: mqtt
-  name: "[Down] N Window, Saloni"
+- name: "[Down] N Window, Saloni"
   state_topic: "stat/tasmota_E29931/POWER2"
   command_topic: "cmnd/tasmota_E29931/POWER2"
 
-- platform: mqtt
-  name: "[UP] NW Window, Saloni"
+- name: "[UP] NW Window, Saloni"
   state_topic: "stat/tasmota_E29C1D/POWER1"
   command_topic: "cmnd/tasmota_E29C1D/POWER1"
-- platform: mqtt
-  name: "[Down] NW Window, Saloni"
+- name: "[Down] NW Window, Saloni"
   state_topic: "stat/tasmota_E29931/POWER1"
   command_topic: "cmnd/tasmota_E29931/POWER1"
