@@ -64,7 +64,7 @@
   command_topic: "shellies/shelly1-E098068CE394/relay/0/command"
 #   availability_topic: "shellies/shelly1-E098068CE394/online"
   qos: 1
-  value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
+  state_value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
   payload_on: "on"
   payload_off: "off"
   payload_available: "true"
@@ -85,7 +85,7 @@
   command_topic: "shellies/shellyplug-s-F8C5C0/relay/0/command"
 #   availability_topic: "shellies/shellyplug-s-F8C5C0/online"
   qos: 1
-  value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
+  state_value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
   payload_on: "on"
   payload_off: "off"
   payload_available: "true"
@@ -101,7 +101,7 @@
   command_topic: "shellies/shelly1pm-98CDAC1EED2D/relay/0/command"
 #   availability_topic: "shellies/shelly1pm-98CDAC1EED2D/online"
   qos: 1
-  value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
+  state_value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
   payload_on: "on"
   payload_off: "off"
   payload_available: "true"
@@ -116,7 +116,7 @@
   command_topic: "shellies/shellyplug-s-9A52C9/relay/0/command"
 #   availability_topic: "shellies/shellyplug-s-9A52C9/online"
   qos: 1
-  value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
+  state_value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
   payload_on: "on"
   payload_off: "off"
   payload_available: "true"
@@ -131,7 +131,7 @@
   command_topic: "shellies/shellyplug-s-9DD406/relay/0/command"
 #   availability_topic: "shellies/shellyplug-s-9DD406/online"
   qos: 1
-  value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
+  state_value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
   payload_on: "on"
   payload_off: "off"
   payload_available: "true"
