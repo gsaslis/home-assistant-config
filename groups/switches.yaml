@@ -1,0 +1,18 @@
+- platform: group
+  name: North Garden Watering
+  unique_id: north_garden_watering
+  entities:
+    - switch.north_drip_line
+    - switch.east_sprinklers
+    - switch.west_sprinklers
+    - switch.24vac_converter
+
+- platform: group
+  name: South Garden Watering
+  unique_id: south_garden_watering
+  entities:
+    - switch.south_garden_1
+    - switch.south_garden_2
+    - switch.south_garden_3
+    - switch.south_garden_4
+    # - light.garden_path

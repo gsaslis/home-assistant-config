@@ -1,0 +1,29 @@
+- platform: group
+  name: Door Blinds
+  unique_id: door_blinds
+  entities:
+    - cover.kitchen_door
+    - cover.living_room_door
+
+- platform: group
+  name: Window Blinds
+  unique_id: window_blinds
+  entities:
+    - cover.patio_window
+    - cover.kitchen_window
+    - cover.living_room_north_east_window
+    - cover.living_room_north_west_window
+    - cover.living_room_north_window
+
+
+- platform: group
+  name: All Blinds
+  unique_id: all_blinds
+  entities:
+    - cover.patio_window
+    - cover.kitchen_window
+    - cover.living_room_north_east_window
+    - cover.living_room_north_west_window
+    - cover.living_room_north_window
+    - cover.kitchen_door
+    - cover.living_room_door

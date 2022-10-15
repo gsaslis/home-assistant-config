@@ -1,0 +1,11 @@
+- platform: group
+  name: Outdoor Lights
+  unique_id: outdoor_lights
+  entities:
+    - light.garden_steps
+    - light.garden_path
+    - light.kitchen_patio_lights
+    - light.main_entrance_1
+      # don't need both   - light.main_entrance_2
+      # fwtakia    - light.north_balcony
+    - light.east_bedroom_balcony

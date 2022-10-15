@@ -14,7 +14,7 @@
   unique_id: attic_temperature
   state_topic: "shellies/shellyflood-F2B1B4/sensor/temperature"
   unit_of_measurement: '°C'
-  value_template: "{{ value[1:] | float | round(1) }}"
+  # value_template: "{{ value[1:] | float | round(1) }}"
   device_class: "temperature"
   qos: 2
 

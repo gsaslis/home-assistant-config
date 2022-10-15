@@ -19,6 +19,7 @@
   command_topic: "cmnd/tasmota_E29E62/POWER3"
 
 - name: "Main Entrance - 2"
+  unique_id: main_entrance_2
   state_topic: "stat/tasmota_E2D95C/POWER1"
   command_topic: "cmnd/tasmota_E2D95C/POWER1"
 

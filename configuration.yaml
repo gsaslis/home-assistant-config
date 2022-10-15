@@ -25,8 +25,6 @@ tts:
     port: 443
     voice: en_UK/apope_low
 
-group: !include groups.yaml
-
 # My own handmade automations
 automation manual: !include_dir_merge_list automations/
 
@@ -100,6 +98,11 @@ binary_sensor: !include binary_sensors/rest_sensors.yaml
 #       - light.southeast_white_bulb
 #       - light.s_sw_white_bulb
 
+light: !include groups/lights.yaml
+
+switch: !include groups/switches.yaml
+    
+cover: !include groups/covers.yaml
 
 climate: !include_dir_merge_list climate/
 

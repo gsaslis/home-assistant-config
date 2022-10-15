@@ -34,6 +34,7 @@ views:
     - entity: sensor.bedroom_temperature
     - entity: sensor.kitchen_temperature
     - entity: sensor.office_temperature
+    - entity: sensor.attic_temperature
     refresh_interval: 0
     title: House Temperature
     hours_to_show: 72
@@ -60,8 +61,8 @@ views:
   cards:
   - type: entities
     entities:
-    - entity: group.watering_north
-    - entity: group.watering_south
+    - entity: switch.north_garden_watering
+    - entity: switch.south_garden_watering
 - title: Roller Shutters
   path: roller-shutters
   type: sidebar
@@ -120,7 +121,7 @@ views:
   cards:
   - type: entities
     entities:
-    - group.outside_lights
+    - light.outdoor_lights
   - type: glance
     entities:
     - entity: light.aquarium_lights
