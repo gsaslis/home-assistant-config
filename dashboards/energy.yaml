@@ -4,12 +4,28 @@ views:
   path: energy
   badges: []
   cards:
-  - type: statistics-graph
-    entities:
-    - sensor.acquarium_lights_consumption
-    - sensor.bedroom_plug_consumption
-    - sensor.car_park_lights_consumption
-    - sensor.lydia_plug_consumption
-    - sensor.office_consumption
-    title: Energy Consumption
-    days_to_show: 120
+    - title: Energy Consumption
+      type: statistics-graph
+      entities:
+      - sensor.acquarium_lights_consumption
+      - sensor.bedroom_plug_consumption
+      - sensor.car_park_lights_consumption
+      - sensor.lydia_plug_consumption
+      - sensor.office_consumption
+      stat_types:
+        - max
+      period: hour
+      days_to_show: 120
+
+    - title: Total Energy Consumed
+      type: statistics-graph
+      entities:
+        - sensor.aquarium_lights_energy
+        - sensor.bedroom_plug_energy
+        - sensor.car_park_lights_energy
+        - sensor.lydia_plug_energy
+        - sensor.office_energy_sum
+      period: hour
+      stat_types:
+        - sum
+      days_to_show: 120
