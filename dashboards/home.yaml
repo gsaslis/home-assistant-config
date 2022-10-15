@@ -1,200 +1,200 @@
-title: Home
-views:
-- title: Scenes
-  path: scenes
-  badges: []
-  type: panel
-  cards:
-    - title: Scenes
-      type: entities
-      entities:
-        - entity: scene.bye_bye_house
-        - entity: scene.good_morning_house_2
-        - entity: scene.good_night_house
-        - entity: scene.movie_time_2
-        - entity: scene.office_shutdown
-        - entity: scene.open_sesame
-        - entity: scene.patio_up
-        - entity: scene.patio_down
-      show_header_toggle: false
-      state_color: true
+# title: Home
+# views:
+# - title: Scenes
+#   path: scenes
+#   badges: []
+#   type: panel
+#   cards:
+#     - title: Scenes
+#       type: entities
+#       entities:
+#         - entity: scene.bye_bye_house
+#         - entity: scene.good_morning_house_2
+#         - entity: scene.good_night_house
+#         - entity: scene.movie_time_2
+#         - entity: scene.office_shutdown
+#         - entity: scene.open_sesame
+#         - entity: scene.patio_up
+#         - entity: scene.patio_down
+#       show_header_toggle: false
+#       state_color: true
 
-- title: Heating
-  path: heating
-  badges: []
-  cards:
-  - type: thermostat
-    entity: climate.bedrooms
-  - type: thermostat
-    entity: climate.daddy_s_office
-  - type: thermostat
-    entity: climate.ground_floor
-  - type: history-graph
-    entities:
-    - entity: sensor.bedroom_temperature
-    - entity: sensor.kitchen_temperature
-    - entity: sensor.office_temperature
-    - entity: sensor.attic_temperature
-    refresh_interval: 0
-    title: House Temperature
-    hours_to_show: 72
-- path: default_view
-  title: Cameras
-  badges: []
-  cards:
-  - type: picture-entity
-    entity: camera.kitchen_window
-    name: Kitchen Patio
-  - type: picture-entity
-    entity: camera.north_east_windows
-  - type: picture-entity
-    entity: camera.south_garden
-  - type: picture-entity
-    entity: camera.north_garden
-  - type: picture-entity
-    entity: camera.parking_entrance
-  - type: picture-entity
-    entity: camera.daddys_office_entrance
-- title: Watering
-  path: watering
-  badges: []
-  cards:
-  - type: entities
-    entities:
-    - entity: switch.north_garden_watering
-    - entity: switch.south_garden_watering
-- title: Roller Shutters
-  path: roller-shutters
-  type: sidebar
-  badges:
-  - entity: cover.kitchen_door
-  - entity: cover.kitchen_window
-  - entity: cover.living_room_door
-  - entity: cover.living_room_north_east_window
-  - entity: cover.living_room_north_west_window
-  - entity: cover.living_room_north_window
-  - entity: cover.patio_window
-  cards:
-  - type: glance
-    entities:
-    - entity: cover.kitchen_window
-    - entity: cover.kitchen_door
-    - entity: cover.living_room_door
-    - entity: cover.living_room_north_east_window
-    - entity: cover.living_room_north_west_window
-    - entity: cover.living_room_north_window
-    - entity: cover.patio_window
-    title: Roller Shutters
-    show_state: false
-    state_color: true
-  - type: entities
-    entities:
-    - script.doors_down
-    - script.kitchen_patio_down
-    - script.windows_down
-    - script.doors_up
-    - script.kitchen_patio_up
-    - script.windows_up
-    - script.sleep_movie_scene_doors
-    - script.sleep_movie_scene_windows
-    - script.wake_scene_doors
-    - script.wake_scene_windows
-  - type: entities
-    entities:
-    - switch.up_door_kitchen
-    - switch.up_door_saloni
-    - switch.up_n_window_saloni
-    - switch.up_ne_window_saloni
-    - switch.up_nw_window_saloni
-    - switch.up_patio_window_living_room
-    - switch.up_window_kitchen
-    - switch.down_door_kitchen
-    - switch.down_door_saloni
-    - switch.down_n_window_saloni
-    - switch.down_ne_window_saloni
-    - switch.down_nw_window_saloni
-    - switch.down_patio_window_living_room
-    - switch.down_window_kitchen
-- title: Lights
-  path: lights
-  badges: []
-  cards:
-  - type: entities
-    entities:
-    - light.outdoor_lights
-  - type: glance
-    entities:
-    - entity: light.aquarium_lights
-    - entity: light.car_park_lights
-    - entity: light.entrance_hallway
-    - entity: light.garden_path
-    - entity: light.east_bedroom_balcony
-    - entity: light.main_entrance_1
-    - entity: light.main_entrance_2
-    - entity: light.fireplace
-    - entity: light.kitchen_patio_lights
-    - entity: light.north_balcony
-    - entity: light.office_desk
-    - entity: light.office_floor
-    - entity: light.living_room_spot_lights
-    - entity: light.north_garden
-    title: Lighthouse
-    state_color: true
-    columns: 3
-- title: Synology NAS
-  path: synology-nas
-  badges: []
-  cards:
-  - type: sensor
-    entity: sensor.st_happys_box_status
-    graph: line
-    name: Status
-  - type: sensor
-    entity: sensor.st_happys_box_temperature
-    graph: line
-    name: Box Temperature
-    hours_to_show: 168
-  - type: sensor
-    entity: sensor.st_happys_box_average_disk_temp
-    graph: line
-    name: Average Disk Temperature
-    hours_to_show: 168
-  - type: sensor
-    entity: sensor.st_happys_box_cpu_load_average_5_min
-    graph: line
-    name: Load Avg (5 min)
-    hours_to_show: 168
-  - type: sensor
-    entity: sensor.st_happys_box_memory_usage_real
-    graph: line
-    name: Memory Usage
-    hours_to_show: 168
-  - type: sensor
-    entity: sensor.st_happys_box_volume_used
-    graph: line
-    name: Backups Disk Usage
-    hours_to_show: 168
-  - type: sensor
-    entity: sensor.st_happys_box_volume_used_2
-    graph: line
-    name: Home Storage Disk Usage
-    hours_to_show: 168
-  - type: sensor
-    entity: sensor.st_happys_box_volume_used_3
-    graph: line
-    detail: 2
-    name: SSD Disk Usage
-    hours_to_show: 168
-- title: Energy
-  path: energy
-  badges: []
-  cards:
-  - type: statistics-graph
-    entities:
-    - sensor.acquarium_lights_consumption
-    - sensor.bedroom_plug_consumption
-    - sensor.car_park_lights_consumption
-    - sensor.lydia_plug_consumption
-    - sensor.office_consumption
-    title: Energy Consumption
-    days_to_show: 120
+# - title: Heating
+#   path: heating
+#   badges: []
+#   cards:
+#   - type: thermostat
+#     entity: climate.bedrooms
+#   - type: thermostat
+#     entity: climate.daddy_s_office
+#   - type: thermostat
+#     entity: climate.ground_floor
+#   - type: history-graph
+#     entities:
+#     - entity: sensor.bedroom_temperature
+#     - entity: sensor.kitchen_temperature
+#     - entity: sensor.office_temperature
+#     - entity: sensor.attic_temperature
+#     refresh_interval: 0
+#     title: House Temperature
+#     hours_to_show: 72
+# - path: default_view
+#   title: Cameras
+#   badges: []
+#   cards:
+#   - type: picture-entity
+#     entity: camera.kitchen_window
+#     name: Kitchen Patio
+#   - type: picture-entity
+#     entity: camera.north_east_windows
+#   - type: picture-entity
+#     entity: camera.south_garden
+#   - type: picture-entity
+#     entity: camera.north_garden
+#   - type: picture-entity
+#     entity: camera.parking_entrance
+#   - type: picture-entity
+#     entity: camera.daddys_office_entrance
+# - title: Watering
+#   path: watering
+#   badges: []
+#   cards:
+#   - type: entities
+#     entities:
+#     - entity: switch.north_garden_watering
+#     - entity: switch.south_garden_watering
+# - title: Roller Shutters
+#   path: roller-shutters
+#   type: sidebar
+#   badges:
+#   - entity: cover.kitchen_door
+#   - entity: cover.kitchen_window
+#   - entity: cover.living_room_door
+#   - entity: cover.living_room_north_east_window
+#   - entity: cover.living_room_north_west_window
+#   - entity: cover.living_room_north_window
+#   - entity: cover.patio_window
+#   cards:
+#   - type: glance
+#     entities:
+#     - entity: cover.kitchen_window
+#     - entity: cover.kitchen_door
+#     - entity: cover.living_room_door
+#     - entity: cover.living_room_north_east_window
+#     - entity: cover.living_room_north_west_window
+#     - entity: cover.living_room_north_window
+#     - entity: cover.patio_window
+#     title: Roller Shutters
+#     show_state: false
+#     state_color: true
+#   - type: entities
+#     entities:
+#     - script.doors_down
+#     - script.kitchen_patio_down
+#     - script.windows_down
+#     - script.doors_up
+#     - script.kitchen_patio_up
+#     - script.windows_up
+#     - script.sleep_movie_scene_doors
+#     - script.sleep_movie_scene_windows
+#     - script.wake_scene_doors
+#     - script.wake_scene_windows
+#   - type: entities
+#     entities:
+#     - switch.up_door_kitchen
+#     - switch.up_door_saloni
+#     - switch.up_n_window_saloni
+#     - switch.up_ne_window_saloni
+#     - switch.up_nw_window_saloni
+#     - switch.up_patio_window_living_room
+#     - switch.up_window_kitchen
+#     - switch.down_door_kitchen
+#     - switch.down_door_saloni
+#     - switch.down_n_window_saloni
+#     - switch.down_ne_window_saloni
+#     - switch.down_nw_window_saloni
+#     - switch.down_patio_window_living_room
+#     - switch.down_window_kitchen
+# - title: Lights
+#   path: lights
+#   badges: []
+#   cards:
+#   - type: entities
+#     entities:
+#     - light.outdoor_lights
+#   - type: glance
+#     entities:
+#     - entity: light.aquarium_lights
+#     - entity: light.car_park_lights
+#     - entity: light.entrance_hallway
+#     - entity: light.garden_path
+#     - entity: light.east_bedroom_balcony
+#     - entity: light.main_entrance_1
+#     - entity: light.main_entrance_2
+#     - entity: light.fireplace
+#     - entity: light.kitchen_patio_lights
+#     - entity: light.north_balcony
+#     - entity: light.office_desk
+#     - entity: light.office_floor
+#     - entity: light.living_room_spot_lights
+#     - entity: light.north_garden
+#     title: Lighthouse
+#     state_color: true
+#     columns: 3
+# - title: Synology NAS
+#   path: synology-nas
+#   badges: []
+#   cards:
+#   - type: sensor
+#     entity: sensor.st_happys_box_status
+#     graph: line
+#     name: Status
+#   - type: sensor
+#     entity: sensor.st_happys_box_temperature
+#     graph: line
+#     name: Box Temperature
+#     hours_to_show: 168
+#   - type: sensor
+#     entity: sensor.st_happys_box_average_disk_temp
+#     graph: line
+#     name: Average Disk Temperature
+#     hours_to_show: 168
+#   - type: sensor
+#     entity: sensor.st_happys_box_cpu_load_average_5_min
+#     graph: line
+#     name: Load Avg (5 min)
+#     hours_to_show: 168
+#   - type: sensor
+#     entity: sensor.st_happys_box_memory_usage_real
+#     graph: line
+#     name: Memory Usage
+#     hours_to_show: 168
+#   - type: sensor
+#     entity: sensor.st_happys_box_volume_used
+#     graph: line
+#     name: Backups Disk Usage
+#     hours_to_show: 168
+#   - type: sensor
+#     entity: sensor.st_happys_box_volume_used_2
+#     graph: line
+#     name: Home Storage Disk Usage
+#     hours_to_show: 168
+#   - type: sensor
+#     entity: sensor.st_happys_box_volume_used_3
+#     graph: line
+#     detail: 2
+#     name: SSD Disk Usage
+#     hours_to_show: 168
+# - title: Energy
+#   path: energy
+#   badges: []
+#   cards:
+#   - type: statistics-graph
+#     entities:
+#     - sensor.acquarium_lights_consumption
+#     - sensor.bedroom_plug_consumption
+#     - sensor.car_park_lights_consumption
+#     - sensor.lydia_plug_consumption
+#     - sensor.office_consumption
+#     title: Energy Consumption
+#     days_to_show: 120

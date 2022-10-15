@@ -1,0 +1,15 @@
+title: Energy
+views:
+- title: Energy
+  path: energy
+  badges: []
+  cards:
+  - type: statistics-graph
+    entities:
+    - sensor.acquarium_lights_consumption
+    - sensor.bedroom_plug_consumption
+    - sensor.car_park_lights_consumption
+    - sensor.lydia_plug_consumption
+    - sensor.office_consumption
+    title: Energy Consumption
+    days_to_show: 120

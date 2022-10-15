@@ -1,0 +1,20 @@
+title: Scenes
+views:
+- title: Scenes
+  path: scenes
+  badges: []
+  type: panel
+  cards:
+    - title: Scenes
+      type: entities
+      entities:
+        - entity: scene.bye_bye_house
+        - entity: scene.good_morning_house_2
+        - entity: scene.good_night_house
+        - entity: scene.movie_time_2
+        - entity: scene.office_shutdown
+        - entity: scene.open_sesame
+        - entity: scene.patio_up
+        - entity: scene.patio_down
+      show_header_toggle: false
+      state_color: true

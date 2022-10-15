@@ -1,0 +1,28 @@
+title: Lights
+views:
+- title: Lights
+  path: lights
+  badges: []
+  cards:
+  - type: entities
+    entities:
+    - light.outdoor_lights
+  - type: glance
+    entities:
+    - entity: light.aquarium_lights
+    - entity: light.car_park_lights
+    - entity: light.entrance_hallway
+    - entity: light.garden_path
+    - entity: light.east_bedroom_balcony
+    - entity: light.main_entrance_1
+    - entity: light.main_entrance_2
+    - entity: light.fireplace
+    - entity: light.kitchen_patio_lights
+    - entity: light.north_balcony
+    - entity: light.office_desk
+    - entity: light.office_floor
+    - entity: light.living_room_spot_lights
+    - entity: light.north_garden
+    title: Lighthouse
+    state_color: true
+    columns: 3

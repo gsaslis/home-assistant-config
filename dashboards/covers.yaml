@@ -1,0 +1,54 @@
+title: Roller Shutters
+views:
+- title: Roller Shutters
+  path: roller-shutters
+  type: sidebar
+  badges:
+  - entity: cover.kitchen_door
+  - entity: cover.kitchen_window
+  - entity: cover.living_room_door
+  - entity: cover.living_room_north_east_window
+  - entity: cover.living_room_north_west_window
+  - entity: cover.living_room_north_window
+  - entity: cover.patio_window
+  cards:
+  - type: glance
+    entities:
+    - entity: cover.kitchen_window
+    - entity: cover.kitchen_door
+    - entity: cover.living_room_door
+    - entity: cover.living_room_north_east_window
+    - entity: cover.living_room_north_west_window
+    - entity: cover.living_room_north_window
+    - entity: cover.patio_window
+    title: Roller Shutters
+    show_state: false
+    state_color: true
+  - type: entities
+    entities:
+    - script.doors_down
+    - script.kitchen_patio_down
+    - script.windows_down
+    - script.doors_up
+    - script.kitchen_patio_up
+    - script.windows_up
+    - script.sleep_movie_scene_doors
+    - script.sleep_movie_scene_windows
+    - script.wake_scene_doors
+    - script.wake_scene_windows
+  - type: entities
+    entities:
+    - switch.up_door_kitchen
+    - switch.up_door_saloni
+    - switch.up_n_window_saloni
+    - switch.up_ne_window_saloni
+    - switch.up_nw_window_saloni
+    - switch.up_patio_window_living_room
+    - switch.up_window_kitchen
+    - switch.down_door_kitchen
+    - switch.down_door_saloni
+    - switch.down_n_window_saloni
+    - switch.down_ne_window_saloni
+    - switch.down_nw_window_saloni
+    - switch.down_patio_window_living_room
+    - switch.down_window_kitchen

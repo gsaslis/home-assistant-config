@@ -128,9 +128,60 @@ lovelace:
   mode: storage
   # but we can also add our own yaml dashboards
   dashboards:
-    lovelace-yaml:
+    # enable this view (and probably comment out the other ones) if you prefer different tabs
+    # in a single dashboard, rather than multiple entries on the left sidebar
+
+    # lovelace-home:
+    #   mode: yaml
+    #   title: !secret home_name
+    #   icon: mdi:home-automation
+    #   show_in_sidebar: true
+    #   filename: dashboards/home.yaml
+    lovelace-scenes:
       mode: yaml
-      title: !secret home_name
-      icon: mdi:home-automation
+      title: Scenes
+      icon: mdi:home-circle
       show_in_sidebar: true
-      filename: dashboards/home.yaml
+      filename: dashboards/scenes.yaml    
+    lovelace-heating:
+      mode: yaml
+      title: Heating
+      icon: mdi:home-thermometer-outline
+      show_in_sidebar: true
+      filename: dashboards/heating.yaml          
+    lovelace-cameras:
+      mode: yaml
+      title: Cameras
+      icon: mdi:camera-outline
+      show_in_sidebar: true
+      filename: dashboards/cameras.yaml
+    lovelace-covers:
+      mode: yaml
+      title: Roller Shutters
+      icon: mdi:roller-shade
+      show_in_sidebar: true
+      filename: dashboards/covers.yaml      
+    lovelace-lights:
+      mode: yaml
+      title: Lights
+      icon: mdi:ceiling-light-multiple-outline
+      show_in_sidebar: true
+      filename: dashboards/lights.yaml      
+    lovelace-watering:
+      mode: yaml
+      title: Watering
+      icon: mdi:water-pump
+      show_in_sidebar: true
+      filename: dashboards/watering.yaml
+    lovelace-energy:
+      mode: yaml
+      title: Energy
+      icon: mdi:meter-electric-outline
+      show_in_sidebar: true
+      filename: dashboards/energy.yaml      
+    lovelace-nas:
+      mode: yaml
+      title: NAS
+      icon: mdi:harddisk
+      show_in_sidebar: true
+      filename: dashboards/nas.yaml      

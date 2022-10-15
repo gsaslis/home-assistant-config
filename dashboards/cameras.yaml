@@ -1,0 +1,19 @@
+title: Cameras
+views:
+- title: Cameras
+  path: cameras
+  badges: []
+  cards:
+  - type: picture-entity
+    entity: camera.kitchen_window
+    name: Kitchen Patio
+  - type: picture-entity
+    entity: camera.north_east_windows
+  - type: picture-entity
+    entity: camera.south_garden
+  - type: picture-entity
+    entity: camera.north_garden
+  - type: picture-entity
+    entity: camera.parking_entrance
+  - type: picture-entity
+    entity: camera.daddys_office_entrance

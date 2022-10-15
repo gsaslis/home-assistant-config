@@ -1,0 +1,22 @@
+title: Heating
+views:
+
+- title: Heating
+  path: heating
+  badges: []
+  cards:
+  - type: thermostat
+    entity: climate.bedrooms
+  - type: thermostat
+    entity: climate.daddy_s_office
+  - type: thermostat
+    entity: climate.ground_floor
+  - type: history-graph
+    entities:
+    - entity: sensor.bedroom_temperature
+    - entity: sensor.kitchen_temperature
+    - entity: sensor.office_temperature
+    - entity: sensor.attic_temperature
+    refresh_interval: 0
+    title: House Temperature
+    hours_to_show: 72

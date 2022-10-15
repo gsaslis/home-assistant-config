@@ -1,0 +1,46 @@
+title: NAS
+views:
+- title: Synology NAS
+  path: synology-nas
+  badges: []
+  cards:
+  - type: sensor
+    entity: sensor.st_happys_box_status
+    graph: line
+    name: Status
+  - type: sensor
+    entity: sensor.st_happys_box_temperature
+    graph: line
+    name: Box Temperature
+    hours_to_show: 168
+  - type: sensor
+    entity: sensor.st_happys_box_average_disk_temp
+    graph: line
+    name: Average Disk Temperature
+    hours_to_show: 168
+  - type: sensor
+    entity: sensor.st_happys_box_cpu_load_average_5_min
+    graph: line
+    name: Load Avg (5 min)
+    hours_to_show: 168
+  - type: sensor
+    entity: sensor.st_happys_box_memory_usage_real
+    graph: line
+    name: Memory Usage
+    hours_to_show: 168
+  - type: sensor
+    entity: sensor.st_happys_box_volume_used
+    graph: line
+    name: Backups Disk Usage
+    hours_to_show: 168
+  - type: sensor
+    entity: sensor.st_happys_box_volume_used_2
+    graph: line
+    name: Home Storage Disk Usage
+    hours_to_show: 168
+  - type: sensor
+    entity: sensor.st_happys_box_volume_used_3
+    graph: line
+    detail: 2
+    name: SSD Disk Usage
+    hours_to_show: 168

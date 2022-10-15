@@ -1,0 +1,10 @@
+title: Watering
+views:
+- title: Watering
+  path: watering
+  badges: []
+  cards:
+  - type: entities
+    entities:
+    - entity: switch.north_garden_watering
+    - entity: switch.south_garden_watering
