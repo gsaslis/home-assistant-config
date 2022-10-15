@@ -1,6 +1,6 @@
 - platform: group
-  name: Outdoor Lights
-  unique_id: outdoor_lights
+  name: Outdoor
+  unique_id: outdoor
   entities:
     - light.garden_steps
     - light.garden_path

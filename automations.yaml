@@ -253,7 +253,7 @@
     event: sunset
     offset: 00:30:00
   action:
-  - entity_id: light.outdoor_lights
+  - entity_id: light.outdoor
     service: light.turn_on
 - id: outdoor_lights_morning
   alias: Outdoor Lights off, 45m before sunrise
@@ -262,7 +262,7 @@
     event: sunrise
     offset: -00:45:00
   action:
-  - entity_id: light.outdoor_lights
+  - entity_id: light.outdoor
     service: light.turn_off
 
 

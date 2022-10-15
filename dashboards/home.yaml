@@ -121,7 +121,7 @@
 #   cards:
 #   - type: entities
 #     entities:
-#     - light.outdoor_lights
+#     - light.outdoor
 #   - type: glance
 #     entities:
 #     - entity: light.aquarium_lights
