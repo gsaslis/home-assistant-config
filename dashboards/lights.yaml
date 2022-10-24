@@ -23,6 +23,7 @@ views:
     - entity: light.office_floor
     - entity: light.living_room_spot_lights
     - entity: light.north_garden
+    - entity: light.snail_lights
     title: Lighthouse
     state_color: true
     columns: 3
