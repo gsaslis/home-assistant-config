@@ -107,4 +107,6 @@ With that, it is now time to add the roller shutters to Home Assistant!
 
 image::../images/roller_shutter-home_assistant_card.png[Home Assistant Roller Shutter Card, 500]
 
+== Credits
+
 Big shout out to link:https://twitter.com/mzampetakis[Michalis] for all his help putting this guide together !! 🙏 🍻
