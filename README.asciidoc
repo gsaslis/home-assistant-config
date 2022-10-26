@@ -10,7 +10,30 @@ functional.
 
 == Roller Shutters
 
-TODO: https://github.com/gsaslis/home-assistant-config/issues/4
+My current solution for roller shutters, included in this repo, was
+put in place a short while prior to the launch of Shelly 1, so they
+involve a setup based on Sonoff T1 switches, running Tasmota.
+
+The switches are connected to the MQTT server and they are controlled
+via MQTT through Home Assistant, with the config you'll find in:
+
+* link:covers/covers.yaml[covers/covers.yaml]
+* link:automations/covers.yaml[automations/covers.yaml]
+
+The main idea is that the Home Assistant **cover** controls produce MQTT
+commands and the **automations** are then responsible for triggering
+the suitable relay.
+
+This is a working setup that I am fairly happy with, considering the
+alternative of stripping everything and starting over, but I would do
+things differently next time round...
+
+I am not **at all** happy with these hardware switches, and I also don't have position controls available with this approach (though I
+have _timed_ how long some positions take, in some link:scripts.yaml[scripts]).
+
+The good news is that a **much better** setup is nowadays possible,
+with Shelly 2.5 and their "Roller Shutters" function! You can find
+a link:docs/roller-shutters.asciidoc[detailed How-to here].
 
 == Thermostats
 
