@@ -184,4 +184,8 @@ lovelace:
       title: NAS
       icon: mdi:harddisk
       show_in_sidebar: true
-      filename: dashboards/nas.yaml      
+      filename: dashboards/nas.yaml
+
+spotify:
+  client_id: !secret spotify_client_id
+  client_secret: !secret spotify_secret
