@@ -124,3 +124,7 @@
   #optimistic: false
   retain: false
 
+- name: "Meeting Light"
+  unique_id: s20_plug_0
+  state_topic: "stat/sonoff_s20_0/POWER"
+  command_topic: "cmnd/sonoff_s20_0/POWER"

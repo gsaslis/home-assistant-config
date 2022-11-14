@@ -1,8 +1,3 @@
-- name: "S20 Plug 0"
-  unique_id: s20_plug_0
-  state_topic: "stat/sonoff_s20_0/POWER"
-  command_topic: "cmnd/sonoff_s20_0/POWER"
-
 - name: "Lydia Plug"
   unique_id: lydia_plug
   state_topic: "shellies/shellyplug-s-B52E5A/relay/0"
