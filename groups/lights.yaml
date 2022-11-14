@@ -4,7 +4,8 @@
   entities:
     - light.garden_steps
     - light.garden_path
-    - light.kitchen_patio_lights
+#    Switched to on/off triggered by movement
+#    - light.kitchen_patio_lights
     - light.main_entrance_1
       # don't need both   - light.main_entrance_2
       # fwtakia    - light.north_balcony

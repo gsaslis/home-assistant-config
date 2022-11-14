@@ -213,9 +213,9 @@
       - light.main_entrance_2
       - light.garden_path
   mode: single
-- id: 'car_park_mvt'
+- id: car_park_mvt
   alias: Car Park Movement
-  description: 'Turn on lights in the car park when some movement detected'
+  description: Turn on lights in the car park when some movement detected
   trigger:
   - platform: state
     entity_id: binary_sensor.parking_entrance_people_movement
@@ -685,4 +685,31 @@
     target:
       entity_id: light.snail_lights
 
-
+- id: 'patio_movement_automation'
+  alias: Patio movement Lights
+  description: Turn on lights in the kitchen patio when some movement detected
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.kitchen_patio_movement
+  condition: []
+  action:
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 30
+      milliseconds: 0
+  - service: light.turn_on
+    data: {}
+    target:
+      entity_id: light.kitchen_patio_lights
+  - delay:
+      hours: 0
+      minutes: 5
+      seconds: 0
+      milliseconds: 0
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id: light.kitchen_patio_lights
+  mode: single
