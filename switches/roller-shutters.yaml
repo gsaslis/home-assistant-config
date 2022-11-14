@@ -50,3 +50,14 @@
 - name: "[Down] NW Window, Saloni"
   state_topic: "stat/tasmota_E29931/POWER1"
   command_topic: "cmnd/tasmota_E29931/POWER1"
+
+- name: "Garage Door"
+  unique_id: garage_door
+  command_topic: "home/garage_door/command"
+  state_topic: "shellies/shelly1-34945473059A/relay/0"
+  qos: 1
+  value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
+  payload_on: "on"
+  payload_off: "off"
+  payload_available: "true"
+  payload_not_available: "false"

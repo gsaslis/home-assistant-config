@@ -200,3 +200,23 @@
             {% else %}
               cmnd/tasmota_E2DAC4/POWER3
             {% endif %}
+
+
+- alias: 'Garage Door Controller'
+  trigger:
+    - platform: mqtt
+      topic: home/garage_door/command
+  action:
+      - service: mqtt.publish
+        data_template:
+          payload: "on"
+          topic: shellies/shelly1-34945473059A/relay/0/command
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 20
+          milliseconds: 0
+      - service: mqtt.publish
+        data_template:
+          payload: "off"
+          topic: shellies/shelly1-34945473059A/relay/0/command
