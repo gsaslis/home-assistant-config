@@ -128,3 +128,13 @@
   unique_id: s20_plug_0
   state_topic: "stat/sonoff_s20_0/POWER"
   command_topic: "cmnd/sonoff_s20_0/POWER"
+
+- name: "Office Xmas Lights"
+  unique_id: shellyplug-s-4022D8836379
+  state_topic: "shellies/shellyplug-s-4022D8836379/relay/0"
+  command_topic: "shellies/shellyplug-s-4022D8836379/relay/0/command"
+  qos: 1
+  state_value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
+  payload_on: "on"
+  payload_off: "off"
+  retain: false

@@ -12,6 +12,9 @@ views:
       - sensor.car_park_lights_consumption
       - sensor.lydia_plug_consumption
       - sensor.office_consumption
+      - sensor.breadmaker_consumption
+      - sensor.dishwasher_consumption
+      - sensor.office_xmas_lights_consumption
       stat_types:
         - max
       period: hour
@@ -25,6 +28,9 @@ views:
         - sensor.car_park_lights_energy
         - sensor.lydia_plug_energy
         - sensor.office_energy_sum
+        - sensor.breadmaker_energy_sum
+        - sensor.dishwasher_energy_sum
+        - sensor.office_xmas_lights_energy_sum
       period: hour
       stat_types:
         - sum

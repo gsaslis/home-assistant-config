@@ -26,6 +26,34 @@
   #optimistic: false
   retain: false
 
+- name: "Dishwasher Plug"
+  unique_id: dishwasher_plug
+  state_topic: "shellies/shellyplug-s-F18C8B/relay/0"
+  command_topic: "shellies/shellyplug-s-F18C8B/relay/0/command"
+#   availability_topic: "shellies/shellyplug-s-9DD406/online"
+  qos: 1
+  value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
+  payload_on: "on"
+  payload_off: "off"
+  payload_available: "true"
+  payload_not_available: "false"
+  #optimistic: false
+  retain: false
+
+- name: "Breadmaker Plug"
+  unique_id: breadmaker_plug
+  state_topic: "shellies/shellyplug-s-F144BD/relay/0"
+  command_topic: "shellies/shellyplug-s-F144BD/relay/0/command"
+#   availability_topic: "shellies/shellyplug-s-9DD406/online"
+  qos: 1
+  value_template: "{% if value == 'on' %} on {% else %} off {% endif %}"
+  payload_on: "on"
+  payload_off: "off"
+  payload_available: "true"
+  payload_not_available: "false"
+  #optimistic: false
+  retain: false
+
 - name: "Entrance Power Plug"
   unique_id: entrance_power_plug
   state_topic: "stat/tasmota_E2D95C/POWER2"

@@ -64,3 +64,21 @@
   state_topic: "shellies/shellyplug-s-B52E5A/relay/0/power"
   unit_of_measurement: "Watt"
   state_class: "measurement"
+
+- name: "Dishwasher Consumption"
+  unique_id: dishwasher_plug_consumption
+  state_topic: "shellies/shellyplug-s-F18C8B/relay/0/power"
+  unit_of_measurement: "Watt"
+  state_class: "measurement"
+
+- name: "Breadmaker Consumption"
+  unique_id: breadmaker_plug_consumption
+  state_topic: "shellies/shellyplug-s-F144BD/relay/0/power"
+  unit_of_measurement: "Watt"
+  state_class: "measurement"
+
+- name: "Office Xmas Lights Consumption"
+  unique_id: shellyplug_s_consumption
+  state_topic: "shellies/shellyplug-s-4022D8836379/relay/0/power"
+  unit_of_measurement: "Watt"
+  state_class: "measurement"
