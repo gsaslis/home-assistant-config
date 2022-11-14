@@ -1,5 +1,6 @@
 - name: Kitchen Window
   device_class: shutter
+  unique_id: kitchen_window
   # state_topic: "tele/kitchenwindow/SENSOR"
   command_topic: "home/kitchenwindow/command"
   # availability_topic: "tele/kitchenwindow/LWT"
@@ -16,6 +17,7 @@
 
 - name: "Kitchen Door"
   device_class: shutter
+  unique_id: kitchen_door
   # state_topic: "tele/kitchendoor/SENSOR"
   command_topic: "home/kitchendoor/command"
   # availability_topic: "tele/kitchendoor/LWT"
@@ -32,6 +34,7 @@
 
 - name: "Patio Window"
   device_class: shutter
+  unique_id: living_room_patio_window
   # state_topic: "tele/patiowindow/SENSOR"
   command_topic: "home/patiowindow/command"
   # availability_topic: "tele/patiowindow/LWT"
@@ -48,6 +51,7 @@
 
 - name: "Living Room North Window"
   device_class: shutter
+  unique_id: living_room_n_window
   # state_topic: "tele/livingroom_n_window/SENSOR"
   command_topic: "home/livingroom_n_window/command"
   # availability_topic: "tele/livingroom_n_window/LWT"
@@ -64,6 +68,7 @@
 
 - name: "Living Room North West Window"
   device_class: shutter
+  unique_id: living_room_nw_window
   # state_topic: "tele/livingroom_nw_window/SENSOR"
   command_topic: "home/livingroom_nw_window/command"
   # availability_topic: "tele/livingroom_nw_window/LWT"
@@ -80,6 +85,7 @@
 
 - name: "Living Room North East Window"
   device_class: shutter
+  unique_id: living_room_ne_window
   # state_topic: "tele/livingroom_ne_window/SENSOR"
   command_topic: "home/livingroom_ne_window/command"
   # availability_topic: "tele/livingroom_ne_window/LWT"
@@ -96,6 +102,7 @@
 
 - name: "Living Room Door"
   device_class: shutter
+  unique_id: living_room_door
   # state_topic: "tele/livingroom_door/SENSOR"
   command_topic: "home/livingroom_door/command"
   # availability_topic: "tele/livingroom_door/LWT"
@@ -109,3 +116,4 @@
   payload_not_available: "Offline"
   optimistic: true
   retain: false
+
