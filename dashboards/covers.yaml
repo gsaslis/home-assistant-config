@@ -21,6 +21,7 @@ views:
     - entity: cover.living_room_north_west_window
     - entity: cover.living_room_north_window
     - entity: cover.patio_window
+    - entity: switch.garage_door
     title: Roller Shutters
     show_state: false
     state_color: true
