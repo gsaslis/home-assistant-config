@@ -33,7 +33,7 @@ have _timed_ how long some positions take, in some link:scripts.yaml[scripts]).
 
 The good news is that a **much better** setup is nowadays possible,
 with Shelly 2.5 and their "Roller Shutters" function! You can find
-a link:docs/roller-shutters.asciidoc[detailed How-to here].
+a link:https://gsaslis.github.io/posts/smart-roller-shutters[detailed How-to here].
 
 == Garage Door
 
